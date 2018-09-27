@@ -1,0 +1,88 @@
+/*页头*/
+
+body, html {
+    height: 100%;
+    background-image: url("assets/image/EmoryPoint.jpg");
+}
+
+.head{
+    height: 80px;
+    width: auto;
+    /*background-color: red;*/
+}
+
+.logo img{
+    float: left;
+    width: 75px;
+    height: 75px;
+}
+
+.logotext{
+    position: absolute;
+    margin-left: 85px;
+    margin-top: 0;
+}
+.logotext h2{
+    text-align: left;
+    font-size: xx-large;
+    color: #2b3d53;
+    font-family: "microsoft yahei", arial, tahoma, helvetica, sans-serif;
+}
+
+.headInfo_login{
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+    font-size: x-large;
+    color:#2b542c;
+
+
+}
+
+
+
+
+
+
+
+.mainpage{
+    /*background-color: whitesmoke;*/
+    width: 1260px;
+    height: 600px;
+    position: absolute;
+    top:115px;
+    left:130px;
+}
+.text{
+    /*background-color: red;*/
+    width: 600px;
+    height: 100px;
+}
+.text h1{
+    font-family: "Adobe Song Std";
+}
+
+.mainpage img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+/* 中间*/
+.content{
+    height: 756px;
+    width: 1060px;
+}
+
+/*页尾*/
+.footer{
+    background-color: #102D4D;
+    color: #eaeaea;
+
+}
