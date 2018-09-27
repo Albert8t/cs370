@@ -36,7 +36,7 @@ body, html {
 .headInfo_login{
     float: right;
     margin-right: 20px;
-    margin-top: 20px;
+    margin-top: 25px;
     font-family: fantasy;
     font-weight: 600;
     font-size: x-large;
@@ -47,7 +47,6 @@ body, html {
     text-decoration: underline;
 }
 
-
 .mainpage{
     /*background-color: whitesmoke;*/
     width: 1260px;
@@ -56,6 +55,16 @@ body, html {
     top:115px;
     left:130px;
 }
+
+.footer{
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: fantasy;
+    font-weight: 600;
+    font-size: x-large;
+    color:rgb(101, 50, 33);
+}
+
 .text{
     /*background-color: red;*/
     width: 600px;
@@ -71,21 +80,9 @@ body, html {
 }
 
 
-
-
-
-
-
-
 /* 中间*/
 .content{
     height: 756px;
     width: 1060px;
 }
 
-/*页尾*/
-.footer{
-    background-color: #102D4D;
-    color: #eaeaea;
-
-}
