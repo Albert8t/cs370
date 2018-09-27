@@ -13,6 +13,7 @@ body, html {
 
 .logo img{
     float: left;
+    margin-top: 15px;
     width: 75px;
     height: 75px;
 }
@@ -20,29 +21,31 @@ body, html {
 .logotext{
     position: absolute;
     margin-left: 85px;
-    margin-top: 0;
+    margin-top: 0px;
 }
 .logotext h2{
     text-align: left;
-    font-size: xx-large;
-    color: #2b3d53;
-    font-family: "microsoft yahei", arial, tahoma, helvetica, sans-serif;
+    font-size: 50px;
+    letter-spacing: 1px;
+    color: rgb(101, 50, 33);
+    /* #2b3d53 */
+    font-family: Chalkduster, fantasy;
+    /* "Palatino Linotype", "Book Antiqua", Palatino, serif*/
 }
 
 .headInfo_login{
     float: right;
     margin-right: 20px;
     margin-top: 20px;
+    font-family: fantasy;
+    font-weight: 600;
     font-size: x-large;
     color:#2b542c;
-
-
 }
 
-
-
-
-
+.txt:hover {
+    text-decoration: underline;
+}
 
 
 .mainpage{
