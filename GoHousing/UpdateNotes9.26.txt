@@ -1,0 +1,6 @@
+Notes on the structure of current repository:
+
+Interface : admin.html, admin.css
+App:  Contains future webpages(any page other than admin.html/admin.css)
+Assets: Contains images, icons, texts
+nodeModule: Contains modules such as bootstrap
