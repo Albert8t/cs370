@@ -62,7 +62,16 @@ body, html {
     top:55px;
     left:130px;
 }
+.row{
+    position: absolute;
+    top:250px;
+    right:300px;
+}
 
+.text-center{
+    font-size: x-large;
+    color: saddlebrown;
+}
 .footer{
     position: absolute;
     bottom: 0px;
