@@ -2,13 +2,18 @@
 
 body, html {
     height: auto;
-    background-image: url("assets/image/EmoryPoint.jpg");
+    /*background-image: url("assets/image/EmoryPoint.jpg");*/
     /*background-size: cover;*/
 }
 
+
+
 .head{
+    position: absolute;
+    top:0px;
     height: 80px;
     width: auto;
+    z-index: 1;
     /*background-color: red;*/
 }
 
@@ -34,14 +39,15 @@ body, html {
     /* "Palatino Linotype", "Book Antiqua", Palatino, serif*/
 }
 
-.headInfo_login{
+.headInfo_login {
+    position: absolute;
     float: right;
-    margin-right: 20px;
-    margin-top: 25px;
+    top: 30px;
+    right: -1250px;
     font-family: fantasy;
     font-weight: 600;
     font-size: x-large;
-    color:#2b542c;
+    color: #2b542c;
 }
 
 .txt:hover {
@@ -52,12 +58,15 @@ body, html {
     /*background-color: whitesmoke;*/
     width: 1260px;
     height: 600px;
-    position: absolute;
-    top:115px;
+    position: relative;
+    top:55px;
     left:130px;
 }
 
 .footer{
+    position: absolute;
+    bottom: 0px;
+    right: 30px;
     text-align: center;
     margin-bottom: 25px;
     font-family: fantasy;
@@ -83,7 +92,9 @@ body, html {
 
 /* 中间*/
 .content{
+    position: absolute;
+    top:80px;
     height: 670px;
-    width: auto;
+    width: 1260px;
 }
 
