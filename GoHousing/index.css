@@ -47,12 +47,12 @@ body, html {
     color: rgb(232, 232, 232);   
 }
 
-.txt: hover {
-    text-decoration: underline;
-}
+/*.txt: hover {*/
+    /*text-decoration: underline;*/
+/*}*/
 
 
-/*.row{
+.row{
     position: absolute;
     top:250px;
     right:300px;
@@ -61,7 +61,7 @@ body, html {
 .text-center{
     font-size: x-large;
     color: saddlebrown;
-}*/
+}
 
 /* body */
 .content{
@@ -91,25 +91,31 @@ body, html {
     justify-content: center;
 }
 
-.row1 {
-    margin: 10px;
+.text-center{
     position: absolute;
-    left: 160px;
+    top:70px;
+    z-index: 3;
+    font-size: 30px;
 }
-.row1 h1 {
+/*.row1 {*/
+    /*margin: 10px;*/
+    /*position: absolute;*/
+    /*left: 160px;*/
+/*}*/
+/*.row1 h1 {*/
 
-}
+/*}*/
 
-.row2 {
-    margin: 10px;
-    position: absolute;
-    left: 443px;
-}
-.row3 {
-    margin: 10px;
-    position: absolute;
-    left: 726px;
-}
+/*.row2 {*/
+    /*margin: 10px;*/
+    /*position: absolute;*/
+    /*left: 443px;*/
+/*}*/
+/*.row3 {*/
+    /*margin: 10px;*/
+    /*position: absolute;*/
+    /*left: 726px;*/
+/*}*/
 
 /*.flex-container > div {
     background-image: url("assets/image/background.jpg");
