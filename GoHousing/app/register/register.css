@@ -11,7 +11,7 @@ body, html {
     background-size: cover;
 }
 
-.form-login {
+.form-signup {
     position: absolute;
     right: 30%;
     margin-top: 10%;
@@ -21,7 +21,7 @@ body, html {
 }
 
 
-.title-signin{
+.title-signup{
     width: 100%;
     display: block;
     font-family: 'Montserrat', sans-serif;
@@ -58,15 +58,7 @@ body, html {
     padding: 0 20px;
     border-radius: 10px;
 }
-
-.txt2 {
-    font-family: 'Cinzel', serif;;
-    font-size: 14px;
-    color: #999999;
-    line-height: 1.5;
-}
-
-.login-button {
+.signup-button {
     width: 100%;
     display: -webkit-box;
     display: -webkit-flex;
