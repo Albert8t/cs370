@@ -3,7 +3,7 @@ body, html {
     margin: 0;
 }
 
-.limiter{
+.limiter {
     background-image: url("assets/image/loginbackground.png");
     height:100%;
     background-position: center;
