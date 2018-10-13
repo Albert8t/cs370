@@ -1,9 +1,8 @@
 /*页头*/
 
 body, html {
-    height: auto;
-    /*background-image: url("assets/image/EmoryPoint.jpg");*/
-    /*background-size: cover;*/
+    height: 100%;
+    margin: 0;
 }
 
 
