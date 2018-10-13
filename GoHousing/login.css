@@ -32,6 +32,7 @@
     text-align: center;
 }
 
+
 .txt1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
@@ -76,6 +77,7 @@
     display: flex;
     flex-wrap: wrap;
 }
+
 
 .button-form {
     display: -webkit-box;

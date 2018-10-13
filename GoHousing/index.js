@@ -39,4 +39,15 @@ var app = angular.module("showhideApp", [])
             $scope.hideval = true;
         }
     }
+    $scope.showval1 = false;
+    $scope.isShowHide1 = function (param) {
+        if (param == "show") {
+            $scope.showval1 = true;
+            $scope.hideval1 = false;
+        }
+        else if (param == "hide") {
+            $scope.showval1 = true;
+            $scope.hideval = true;
+        }
+    }
 });

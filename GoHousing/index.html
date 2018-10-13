@@ -100,7 +100,7 @@
             <!--<span>|</span>-->
             <!--<a style="color: rgb(232, 232, 232);" href="app/register/register.html">Sign up</a>-->
             <input type="button" class="button" ng-click="isShowHide('hide')" value="Log In">
-            <input type="button" class="button" value="Sign Up">
+            <input type="button" class="button" ng-click="isShowHide1('hide')"value="Sign Up">
             <input type="button" class="button" value="Help">
         </div>
     </div>
@@ -156,7 +156,7 @@
     </div>
 </div>
 
-<div class= "limiter" ng-show = "hideval">
+<div class= "limiter" ng-show = "showval">
     <div class = "container-login">
         <form class = "form-login">
                 <span class="title-signin">
@@ -199,6 +199,54 @@
                     Sign up now
                 </a>
             </div>
+        </form>
+    </div>
+</div>
+
+<div class= "limiter" ng-show = "showval1">
+    <div class = "container-login">
+        <form class = "form-login">
+                <span class="title-signin">
+                    Sign Up to see more
+                </span>
+            <br>
+            <div class= "email">
+                    <span class= "txt1">
+                        Email Address
+                    </span>
+            </div>
+            <div class="input-title">
+                <input class = "input1" type="text" name="email" >
+            </div>
+
+            <div class="password">
+                    <span class="txt1">
+							Password
+                    </span>
+            </div>
+            <div class="input-title">
+                <input class="input1" type="password" name="pass" >
+            </div>
+
+            <div class="repassword">
+                    <span class="txt1">
+							Retype Password
+                    </span>
+            </div>
+            <div class="input-title">
+                <input class="input1" type="password" name="pass" >
+            </div>
+
+            <br>
+            <br>
+
+            <div class="signin-button">
+                <button class="button-form">
+                    Register
+                </button>
+            </div>
+            <br>
+
         </form>
     </div>
 </div>
