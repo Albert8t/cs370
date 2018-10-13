@@ -31,23 +31,25 @@ var app = angular.module("showhideApp", [])
     $scope.hideval = false;
     $scope.isShowHide = function (param) {
         if (param == "show") {
-            $scope.showval = true;
+            $scope.showval = false;
             $scope.hideval = false;
         }
         else if (param == "hide") {
             $scope.showval = true;
             $scope.hideval = true;
+            $scope.showval1 = false;
         }
     }
     $scope.showval1 = false;
     $scope.isShowHide1 = function (param) {
         if (param == "show") {
-            $scope.showval1 = true;
-            $scope.hideval1 = false;
+            $scope.showval1 = false;
+            $scope.hideval = false;
         }
         else if (param == "hide") {
             $scope.showval1 = true;
             $scope.hideval = true;
+            $scope.showval = false;
         }
     }
 });
