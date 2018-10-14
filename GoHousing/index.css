@@ -240,6 +240,17 @@ body, html {
     background-color: rgba(255, 255, 255, 0.75);
 }
 
+.dialog {
+
+    margin-left: 105%;
+    margin-top: -10%;
+    width: 20px;
+    height: 20px;
+}
+.close-thick:after{
+    content: '✖';
+}
+
 .footer{
     position: absolute;
     bottom: 15px;
