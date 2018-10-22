@@ -4,81 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> <!-- viewport meta tag can adjust the size accordint to device -->
     <meta charset="utf-8" http-equiv="x-UA-Compatible" content="IE=edge">
-
     <link rel="stylesheet" type="text/css" href="nodeModule/bootstrap/css/bootstrap.min.css">
+
+    <script src="nodeModule/bootstrap/js/bootstrap.min.js"></script>
     <!--<link rel="stylesheet" href="nodeModule/bootstrap-submenu/dist/css/bootstrap-submenu.css"> -->
-
     <!--<link rel="stylesheet" type="text/css" href="nodeModule/font-awesome/css/font-awesome.css" />-->
-
     <!--<link rel="stylesheet" href="nodeModule/css/ace.min.css" /> -->
     <!--<link rel="stylesheet" href="nodeModule/css/ace-rtl.min.css" /> -->
     <!--<link rel="stylesheet" href="nodeModule/css/ace-skins.min.css" />  &ndash;&gt;-->
     <link rel="stylesheet" type="text/css" href="index.css">
+    <!--<link rel="stylesheet" type="text/css" href="login.css">-->
+    <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src = "index.js"></script>
     <link rel="shortcut icon" href="assets/image/icon/favicon1.png">
-
-
-
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
     <title>GoHousin</title>
 </head>
 
 
-<body>
-<!--header-->
+<body ng-app = "showhideApp" ng-controller="showhidectrl">
+
+<!--display-->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="assets/image/EmoryPoint.jpg" alt="Emory Point" style="width:100%; height: 825px; opacity: 0.75;">
+        <div class="item active" style="background-image: url('assets/image/EmoryPoint.jpg')" >
             <div class="carousel-caption">
                 <h3>Gables Emory Point</h3>
                 <p>Convenient, clean and near to main campus. </p>
             </div>
         </div>
 
-        <div class="item">
-            <img src="assets/image/gables.jpg" alt="Gables" style="width:100%; height: 825px; opacity: 0.75;">
+        <div class="item" style="background-image: url('assets/image/gables.jpg')">
             <div class="carousel-caption">
                 <h3>Gables Montclair</h3>
                 <p>Comfortbale, fair-priced</p>
             </div>
         </div>
 
-        <div class="item">
-            <img src="assets/image/highlandlakeimg.jpg" alt="highlandLake" style="width:100%; height: 825px; opacity: 0.75;">
+        <div class="item" style="background-image: url('assets/image/highlandlakeimg.jpg')">
             <div class="carousel-caption">
                 <h3>Highland Lake</h3>
                 <p>Davide, please fill this, Thanks!</p>
             </div>
         </div>
+
+        <div class="item" style="background-image: url('assets/image/ClairmontCampus.jpg')">
+            <div class = "carousel-caption">
+                <h3>Clairmont Campus</h3>
+                <p>Bill, please fill this, Thanks!</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="z-index: 10">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="z-index: 10">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
+
+    <!--<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">-->
+        <!--<span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+        <!--<span class="sr-only">Previous</span>-->
+    <!--</a>-->
+    <!--<a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">-->
+        <!--<span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+        <!--<span class="sr-only">Next</span>-->
+    <!--</a>-->
 </div>
 
-<!--</div>-->
+<!--display-->
     <div class ="head" >
         <div class = "logo">
             <img alt="logo" title="logo" src="assets/image/icon/favicon.png">
@@ -87,55 +98,168 @@
         <div class = "logotext">
             <h2> GoHousin</h2>
         </div>
+
         <div class="headInfo_login">
-            <a style="color: rgb(232, 232, 232);" href="app/help/help.html">Help</a>
-            <span class = "txt">|</span>
-            <a style="color: rgb(232, 232, 232);" href="app/login/login.html">Log in</a>
-            <span>|</span>
-            <a style="color: rgb(232, 232, 232);" href="app/register/register.html">Sign up</a>
+            <input type="button" class="button" ng-click="isShowHide('hide')" value="Log In">
+            <input type="button" class="button" ng-click="isShowHide1('hide')"value="Sign Up">
+            <input type="button" class="button" value="Help">
         </div>
     </div>
 
 
-
-
-<!--body/module-->
-    <div class ="content">
+<!--do not display-->
+    <div class ="content" ng-hide = "hideval">
         <div class = "mainpage">
-                <div class = "text">
+            <div class = "text">
                 <h1> Housing struggles are no more</h1>
-                </div>
+            </div>
+            <!--<div ng-app="AngularshowhideApp">-->
+            <!--<h2>AngularJs Show, Hide Div Elements on Click Example</h2>-->
+            <!--<div ng-controller="showhidectrl">-->
+                <!--Enter Name to Display :-->
+                <!--<input type="button" ng-click="hide(isShowHide('show'))" value="Show Div"> <input type="button" ng-click="hide(isShowHide('hide'))" value="Hide Div">-->
+                <!--<br />-->
+                <!--&lt;!&ndash;Show Div Based on showval&ndash;&gt;-->
+                <!--<div ng-show="showval">Show Div: I will Appear on Show Click</div><br />-->
+                <!--&lt;!&ndash;Hide Div Based on showval&ndash;&gt;-->
+                <!--<div ng-hide="hideval">Hide Div: I will Appear on Hide Click</div>-->
+            <!--</div>-->
+
+            <!--</div>-->
+
         </div>
     </div>
 
-<div class="row">
+
+<!--do not display-->
+<div class="row" ng-hide = "hideval">
     <div class="col-sm-4">
         <a href="app/information%20review/information%20review.html" >
-            <img src="assets/image/icon/microsoftv.png" class="img-circle person" alt="Random Name" width="155" height="155">
+            <img src="assets/image/icon/reminder4.png" class="img-square person" alt="Random Name" width="100%" height="100%">
+            <p class="text-center"><strong>Infromation Review</strong></p><br>
         </a>
-        <br><br>
-        <p class="text-center"><strong>Infromation Review</strong></p><br>
 
     </div>
     <div class="col-sm-4">
         <a href="app/information%20sharing/information%20sharing.html" >
-            <img src="assets/image/icon/baidu.svg" class="img-circle person" alt="Random Name" width="155" height="155">
+        <a href="app/information%20sharing/information%20sharing.html" >
+            <img src="assets/image/icon/reminder2.png" class="img-square person" alt="Random Name" width="100%" height="100%">
+            <p class="text-center"><strong>Information Sharing</strong></p><br>
         </a>
-        <br><br>
-        <p class="text-center"><strong>Information Sharing</strong></p><br>
+        </a>
     </div>
+
     <div class="col-sm-4">
         <a href="app/roommate%20searching/roommate%20searching.html">
-            <img src="assets/image/icon/apple.png" class="img-circle person" alt="Random Name" width="155" height="155">
+            <img src="assets/image/icon/reminder3.png" class="img-square person" alt="Random Name" width="100%" height="100%">
+            <p class="text-center"><strong>Roommate Searching</strong></p><br>
         </a>
-        <br><br>
-        <p class="text-center"><strong>Roommate Searching</strong></p><br>
+    </div>
+</div>
+
+<div class= "limiter" ng-show = "showval">
+    <div class = "container-login">
+        <form class = "form-login">
+            <div class="dialog">
+                <a href="index.html" class="close-thick"></a>
+            </div>
+            <span class="title-signin">
+                Log in to see more
+            </span>
+            <br>
+            <div class= "username">
+                    <span class= "txt1">
+                        Username
+                    </span>
+            </div>
+            <div class="input-title">
+                <input class = "input1" type="text" name="username" >
+            </div>
+
+            <div class="password">
+                    <span class="txt1">
+							Password
+                    </span>
+                <a href="app/login/forgotpassword.html" class="txt2">
+                    Forgot?
+                </a>
+            </div>
+            <div class="input-title">
+                <input class="input1" type="password" name="pass" >
+            </div>
+            <br>
+            <br>
+            <div class="login-button">
+                <button class="button-form" ng-click="isShowHide('show')">
+                    Sign In
+                </button>
+            </div>
+            <br>
+            <div class="gosignup">
+                    <span class="txt2">
+                        Not a member?
+                    </span>
+                <a class="txt2" ng-click="isShowHide1('hide')">
+                    Sign up now
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class= "limiter" ng-show = "showval1">
+    <div class = "container-login">
+        <form class = "form-login">
+            <div class="dialog">
+                <a href="index.html" class="close-thick"></a>
+            </div>
+            <span class="title-signin">
+                Sign Up to see more
+            </span>
+            <br>
+            <div class= "email">
+                    <span class= "txt1">
+                        Email Address
+                    </span>
+            </div>
+            <div class="input-title">
+                <input class = "input1" type="text" name="email" >
+            </div>
+
+            <div class="password">
+                    <span class="txt1">
+							Password
+                    </span>
+            </div>
+            <div class="input-title">
+                <input class="input1" type="password" name="pass" >
+            </div>
+
+            <div class="repassword">
+                    <span class="txt1">
+							Retype Password
+                    </span>
+            </div>
+            <div class="input-title">
+                <input class="input1" type="password" name="pass" >
+            </div>
+
+            <br>
+            <br>
+
+            <div class="signin-button">
+                <button class="button-form" ng-click="isShowHide1('show')">
+                    Register
+                </button>
+            </div>
+            <br>
+
+        </form>
     </div>
 </div>
 
 
-<!-- footer -->
-
+<!--display-->
     <div class="footer">
         <a style = "color: rgb(232, 232, 232)" href = "app/aboutus/about.html">About Us</a>
         <span class = "txt">|</span>
@@ -144,10 +268,9 @@
 
 
 
-<!-- <script src="nodeModule/bootstrap/js/bootstrap.min.js"></script> -->
-<!-- <script src="nodeModule/jquery.js"></script> -->
-<!-- <script src="nodeModule/bootstrap-submenu/dist/js/bootstrap-submenu.js" defer></script> -->
-<script src="nodeModule/angular.js"></script>
+ <script src="nodeModule/jquery.js"></script>
+
+
 
 
 
