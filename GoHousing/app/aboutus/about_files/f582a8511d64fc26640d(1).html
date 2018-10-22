@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!-- saved from url=(0104)file:///C:/Users/Levin/Documents/Emory/CS%20370/About%20Us%20-%20FetchMi_files/f582a8511d64fc26640d.html -->
+<html lang="en" dir="ltr" class="mobile has-visible-scrollbar"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <!-- BEGIN TRACKJS -->
+    <script type="text/javascript">window._trackJs = { token: '970cd0be0fb74630b75c8451051299dc', version: 'production',  enabled: ('production'==='production' || 'production'==='whitehouse')};</script>
+    <script type="text/javascript" src="./tracker.js(1).download" crossorigin="anonymous"></script>
+    <!-- END TRACKJS -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <title>Talkjs</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="https://talkjs.com/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://talkjs.com/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://talkjs.com/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://talkjs.com/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://talkjs.com/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://talkjs.com/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://talkjs.com/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://talkjs.com/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://talkjs.com/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="https://talkjs.com/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="https://talkjs.com/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="https://talkjs.com/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="https://talkjs.com/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://talkjs.com/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#b91d47">
+    <meta name="msapplication-TileImage" content="https://talkjs.com/mstile-144x144.png">
+    <link href="./browser-bundle-ecfb8a16b5ada751ba76(1).css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./fonts(1).css">
+    <script src="./browser-bundle-ecfb8a16b5ada751ba76.js(1).download" defer="true"></script>
+    <script>
+        window.parent.postMessage("__talkjs:hello", "*");
+    </script>
+    
+
+
+<link rel="stylesheet" type="text/css" href="./fonts(1).css"><style>
+
+
+
+/** UI_ONLY */
+body, html, #hello {
+  font-family: "Whitney SSm A", "Whitney SSm B", "Helvetica", sans-serif;
+  font-size: 13.3px;
+  line-height: 1.37em;
+  color: #111;
+}
+/** END_UI_ONLY */
+
+.Panel {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: #dce0e0;
+  padding: 10px;
+}
+.AttachOverlay {
+  border-radius: 5px;
+}
+
+.PinboardItem,
+.ChatBox .left-button {
+  color: #111;
+}
+.Hub .PinboardItem.lighter,
+.Button.lightweight,
+.Button.very-lightweight:hover {
+  color: rgba(17,17,17,0.8);
+}
+.HubChatItem:not(.active) > .PinboardItem .ts { 
+  color: rgba(17,17,17,0.6); 
+} 
+.Button.lightweight:hover,
+.HubChatItem.active > .PinboardItem,
+.HubChatItem.active > .PinboardItem .ts { 
+  color: #fff; 
+} 
+.Button.very-lightweight {
+  color: rgba(17,17,17,0.4);
+}
+
+
+
+.Inbox .empty-chat {
+  max-width: 420px;
+}
+
+
+.Inbox:not(.chat-only) .center-stage {
+  max-width: calc(300px + 20px + 420px);
+}
+
+.Hub {
+  max-width: 300px;
+}
+
+.Hub .Panel {
+  max-width: 300px;
+}
+
+
+@media all and (max-width: 640px) {
+  .Inbox.mobile-prefer-chat .center-stage,
+  .Inbox.chat-only .center-stage {
+    max-width: 420px;
+  }
+
+  .Inbox.mobile-prefer-hub .center-stage {
+    max-width: 300px;
+  }
+}
+
+
+@media not all and (max-width: 640px) {
+  .Inbox.chat-only .center-stage {
+    max-width: 420px;
+  }
+
+  .Inbox:not(.chat-only) .hub-container {
+    width: 40%;
+    max-width: 300px;
+  }
+
+  
+  .Inbox:not(.chat-only) div.chat-container { 
+    width: calc(60% - 20px);
+    margin-left: 20px;
+  }
+  .Inbox:not(.chat-only) div.chat-container .ChatBox {
+    max-width: 420px;
+  }
+}
+
+
+
+.Hub .PinboardItem {
+  padding: 12px 10px 12px 10px;
+}
+.HubChatItem>.PinboardItem {
+  max-height: 67px;
+}
+.ChatBox .SlimProfile,
+.ChatBox .MessageList,
+.ChatBox .EntryBox,
+.Hub .NotificationsBox {
+  padding: 8px 8px 8px 8px;
+}
+.TestNotice {
+  margin: 0px 8px 0px 8px;
+}
+.SlimProfile .Avatar {
+  margin-right: 10px;
+}
+.Message, 
+.MessageList .show-more, 
+.DayMarker {
+  margin-bottom: 10px;
+}
+
+.EntryBox .attach-button {
+  right: calc(10px - 0.5em);
+}
+.EntryBox .message-entry-button {
+  margin: 0 2px 0 8px;
+}
+.EntryBox.is-typing .send-col, 
+.EntryBox.was-typing .send-col {
+  max-width: 100px;
+}
+
+
+.TeamPicture {
+  background-color: rgba(220,224,224,0.6);
+}
+.HubChatItem:hover {
+  background-color: rgba(220,224,224,0.6);
+}
+
+.EntryBox,
+.SlimProfile,
+.NotificationsBox,
+.TestNotice {
+  background-color: rgba(220,224,224,0.3);
+}
+.EntryBox {
+  border-top: #dce0e0 solid 1px;
+}
+.SlimProfile,
+.NotificationsBox {
+  border-bottom: #dce0e0 solid 1px;
+}
+.SlimProfile .close {
+  margin: -10px -10px -10px 0px;
+}
+.Link {
+  color: rgb(0, 0, 238);
+}
+.DayMarker {
+  width: calc(100% - 14px);
+  margin: 0.8em 7px 10px 7px;
+}
+.DayMarker div hr {
+    border-bottom-color: #FE4365;
+}
+.DayMarker span {
+  color: #FE4365;
+}
+.Message {
+
+}
+.Message.tj_message--by-me {
+  border-radius: 20px;
+  border-width: 1px;
+  border-color: #02b3c9;
+  background-color: #00bcd4;
+  color: #fff;
+  width: 75%;
+  margin-left: calc(100% - 75%);
+}
+.Message.tj_message--by-other {
+  border-radius: 20px;
+  border-width: 1px;
+  border-color: #eee;
+  background-color: #fff;
+  color: #111;
+  width: 75%;
+}
+.Message.tj_message--by-me .tj_message__timestamp {
+  color: rgba(255,255,255,0.75);
+}
+.Message.tj_message--by-other .tj_message__timestamp {
+  color: rgba(17,17,17,0.75);
+}
+.Message.tj_message--type-media .tj_message__timestamp,
+.Message.tj_message--type-location .tj_message__timestamp {
+  color: #eee;
+}
+
+.SystemMessage {
+  color: rgba(17,17,17,0.85);
+  background-color: rgba(255,255,255,0.75);
+  border-color: rgba(238,238,238,0.75);
+  border-radius: 10px;
+}
+
+.Spinner {
+  border-color: rgba(255,255,255,0.75) transparent rgba(255,255,255,0.75) rgba(255,255,255,0.75);
+}
+.Avatar {
+  border-width: 2px;
+  border-color: #fff;
+  border-radius: 50%;
+}
+.EntryBox .entry-field {
+  background-color: #fff;
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: #E0E0E0;
+  color: #232529;
+}
+
+.HubChatItem.active>.PinboardItem,
+.HubChatItem.active:hover,
+.Button.lightweight:hover {
+  background-color: #0288d1;
+}
+.NotificationsBox input.cmn-toggle-round-flat:checked + label {
+  background-color: rgba(111,199,84,0.6);
+}
+.NotificationsBox input.cmn-toggle-round-flat:checked + label:after {
+  background-color: #6fc754;
+}
+</style>
+</head>
+<body style="overflow-y: auto;"><div id="hello"><div class="View is-klets is-widget not-popover" data-reactroot="" data-reactid="1" data-react-checksum="-2116114729"><div class="Inbox chat-only" data-reactid="2"><div class="hub-underlay" data-reactid="3"><div class="center-stage" data-reactid="4"><div class="chat-container" data-reactid="5">&nbsp;</div></div></div><div class="center-stage" data-reactid="6"><div class="chat-container" data-reactid="7"><div class="ChatBox" id="chat-box" data-reactid="8"><div class="Panel message-panel tj_panel" data-reactid="9"><div class="SlimProfile" data-reactid="10"><div class="Avatar" style="background-image:url(https://ui-avatars.com/api/?background=2980b9&amp;rounded=true&amp;color=fff&amp;name=Fetch+Mi);" data-reactid="11"></div><div class="name" title="FetchMi" data-reactid="12"><span data-reactid="13"><span data-reactid="14"><span data-reactid="15"><!-- react-text: 16 -->FetchMi<!-- /react-text --><!-- react-text: 17 --><!-- /react-text --></span></span><!-- react-text: 18 --><!-- /react-text --></span></div></div><div id="chat-scrollable" class="Scrollable" data-reactid="19"><div class="empty-space" data-reactid="20"></div><div class="MessageList" data-reactid="21"><div data-reactid="22"><div class="Message_container__avatars-none" data-reactid="23"><div class="Message tj_message tj_message--by-other nymid_92c70c39c20cfc970e03_n, tj_message--type-text" data-reactid="24"><span class="message-body" data-reactid="25"><span class="Emojilinkistrippify " data-reactid="26"><!-- react-text: 27 -->Hello! Welcome To FetchMi! Feel free to give suggestions or ask us any questions about our site.  You can also sign in to talk to any of the companies! <!-- /react-text --><img class="Emoji" src="./1f604(1).svg" data-reactid="28"></span></span><span class="tj_message__timestamp" data-reactid="29"><!-- react-text: 30 -->&nbsp;<!-- /react-text --><span class="f-smaller" data-reactid="31"><span data-reactid="32">just now</span></span></span></div></div></div></div></div><div class="EntryBox not-typing" data-reactid="33"><form class="entry-form" data-reactid="34"><div class="entry-row" data-reactid="35"><div class="text-col" data-reactid="36"><textarea id="entrybox-text-f582a8511d64fc26640d" style="height: 59px;" spellcheck="false" class="entry-field test__entry-field" type="text" maxlength="10000" placeholder="Say something..." aria-label="Entry box" data-reactid="37"></textarea></div><div class="send-col" data-reactid="38"><button tabindex="-1" class="Button message-entry-button lightweight" data-reactid="39">Send</button></div></div></form></div></div><input type="file" class="test__fileupload-input" style="visibility:hidden;height:0;" data-reactid="40"></div><div id="bottomOfPage" style="width:100px;height:0;" data-reactid="41"></div></div></div></div></div></div>
+<script>var initialData = {"QS":"clientHeight=969&sessionId=2a5e99c0-eecb-4c51-b0cb-398032b3e977&signature=&thirdparties=&id=007&syncPlease=eyJtZSI6eyJfX3N5bmMiOnRydWUsImlkIjoiMDA3IiwiaW50ZXJuYWxJZCI6IjE1MzQ2YjU5M2M0ZDBjZjA1ZmI2X24iLCJuYW1lIjoiSm9obiBEb2UiLCJwaG90b1VybCI6Imh0dHBzOi8vdWktYXZhdGFycy5jb20vYXBpLz9iYWNrZ3JvdW5kPTI5ODBiOSZyb3VuZGVkPXRydWUmY29sb3I9ZmZmJm5hbWU9MDA3In0sIm90aGVycyI6W3siX19zeW5jIjp0cnVlLCJpZCI6ImEzOWEzYzM4NmY0ODFmMWQ3Y2NkOTlkMGUwZGJhN2RhMzk3Nzc2NGZhYTA0NTJiYzI5MmQ5MDE4NTFjNTA0N2ImaWQ9Mjk1IiwiaW50ZXJuYWxJZCI6IjkyYzcwYzM5YzIwY2ZjOTcwZTAzX24iLCJlbWFpbCI6ImhlbGxvQGZldGNobWkuY29tIiwibmFtZSI6IkZldGNoTWkiLCJ3ZWxjb21lTWVzc2FnZSI6IkhlbGxvISBXZWxjb21lIFRvIEZldGNoTWkhIEZlZWwgZnJlZSB0byBnaXZlIHN1Z2dlc3Rpb25zIG9yIGFzayB1cyBhbnkgcXVlc3Rpb25zIGFib3V0IG91ciBzaXRlLiAgWW91IGNhbiBhbHNvIHNpZ24gaW4gdG8gdGFsayB0byBhbnkgb2YgdGhlIGNvbXBhbmllcyEgOi0pIiwicGhvdG9VcmwiOiJodHRwczovL3VpLWF2YXRhcnMuY29tL2FwaS8%2FYmFja2dyb3VuZD0yOTgwYjkmcm91bmRlZD10cnVlJmNvbG9yPWZmZiZuYW1lPUZldGNoK01pIn1dLCJjb252ZXJzYXRpb24iOnsiaW50ZXJuYWxJZCI6ImY1ODJhODUxMWQ2NGZjMjY2NDBkIiwiaWQiOiJjY2M2ZTQ3NGIwNGVhNzA3ZWEzNyIsInBhcnRpY2lwYW50cyI6W3sidXNlciI6eyJfX3N5bmMiOnRydWUsImlkIjoiMDA3IiwiaW50ZXJuYWxJZCI6IjE1MzQ2YjU5M2M0ZDBjZjA1ZmI2X24iLCJuYW1lIjoiSm9obiBEb2UiLCJwaG90b1VybCI6Imh0dHBzOi8vdWktYXZhdGFycy5jb20vYXBpLz9iYWNrZ3JvdW5kPTI5ODBiOSZyb3VuZGVkPXRydWUmY29sb3I9ZmZmJm5hbWU9MDA3In0sInBhcnRpY2lwYXRpb25TZXR0aW5nIjp7fX0seyJ1c2VyIjp7Il9fc3luYyI6dHJ1ZSwiaWQiOiJhMzlhM2MzODZmNDgxZjFkN2NjZDk5ZDBlMGRiYTdkYTM5Nzc3NjRmYWEwNDUyYmMyOTJkOTAxODUxYzUwNDdiJmlkPTI5NSIsImludGVybmFsSWQiOiI5MmM3MGMzOWMyMGNmYzk3MGUwM19uIiwiZW1haWwiOiJoZWxsb0BmZXRjaG1pLmNvbSIsIm5hbWUiOiJGZXRjaE1pIiwid2VsY29tZU1lc3NhZ2UiOiJIZWxsbyEgV2VsY29tZSBUbyBGZXRjaE1pISBGZWVsIGZyZWUgdG8gZ2l2ZSBzdWdnZXN0aW9ucyBvciBhc2sgdXMgYW55IHF1ZXN0aW9ucyBhYm91dCBvdXIgc2l0ZS4gIFlvdSBjYW4gYWxzbyBzaWduIGluIHRvIHRhbGsgdG8gYW55IG9mIHRoZSBjb21wYW5pZXMhIDotKSIsInBob3RvVXJsIjoiaHR0cHM6Ly91aS1hdmF0YXJzLmNvbS9hcGkvP2JhY2tncm91bmQ9Mjk4MGI5JnJvdW5kZWQ9dHJ1ZSZjb2xvcj1mZmYmbmFtZT1GZXRjaCtNaSJ9LCJwYXJ0aWNpcGF0aW9uU2V0dGluZyI6e319XX19&localSettings=eyJkZXNrdG9wTm90aWZ5IjpmYWxzZSwiaHRtbFBhbmVsT3B0aW9ucyI6eyJwZXJDb252Ijp7fX0sInZpZXciOnsibW9kZSI6IndpZGdldCIsImhpZGVIdWIiOnRydWUsImlzSW5zaWRlTW9iaWxlQXBwIjpmYWxzZSwic2hvd0NoYXRIZWFkZXIiOnRydWUsInNob3dGZWVkSGVhZGVyIjp0cnVlLCJ1c2VCcm93c2VySGlzdG9yeSI6dHJ1ZSwiY2hhdFRpdGxlTW9kZSI6InBhcnRpY2lwYW50cyIsImNoYXRTdWJ0aXRsZU1vZGUiOiJzdWJqZWN0IiwiZmVlZENvbnZlcnNhdGlvblRpdGxlTW9kZSI6ImF1dG8iLCJzaG93Q2xvc2VJbkhlYWRlciI6ImF1dG8ifX0%3D","SESSION_ID":"2a5e99c0-eecb-4c51-b0cb-398032b3e977","BOKEN":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6InRhN0ExRktjIiwibWVJZCI6IjE1MzQ2YjU5M2M0ZDBjZjA1ZmI2X24ifQ.AYN8ejP6AsIYLJjrkA4JyPBYZPP3TusyJwwJtdSHhGI","CHATS":[["f582a8511d64fc26640d",{"participants":{"92c70c39c20cfc970e03_n":{"canWrite":true,"canRead":true},"15346b593c4d0cf05fb6_n":{"canWrite":true,"canRead":true}},"meId":"15346b593c4d0cf05fb6_n","lastMessageType":null,"lastMessageTs":null,"lastMessageSenderId":null,"lastMessageRead":true,"lastMessageLocation":null,"lastMessageBody":null,"lastMessageAttachment":null,"isByMe":false,"id":"f582a8511d64fc26640d","conversationTopicId":null,"conversationSubject":null,"conversationPhotoUrl":null,"conversationId":"f582a8511d64fc26640d","conversationExternalId":"ccc6e474b04ea707ea37","conversationCustom":null,"canIWrite":true,"canIRead":true}]],"EVENTS":[]};</script>
+
+<script>(function() { 
+function yes() { var a = document.getElementById("chat-scrollable"); if(a) { (a.scrollTop = a.scrollHeight - a.clientHeight); } };
+yes(); setTimeout(yes, 800);
+})();</script>
+
+
+
+<div style="position: absolute; left: -400px; top: 0px; width: 100px; height: 100px; overflow: hidden scroll;"></div><div style="position: absolute; left: -400px; top: 0px; width: 100px; height: 100px; overflow: hidden scroll;"></div><textarea id="UWHduodvnewoufnewu" aria-label="hidden Textarea" style="position: fixed; top: 100px; left: -2000px; overflow: hidden; height: 1px; border: 0px; font-size: 13.3px; font-weight: 400; padding: 13px 5px 10px 10px; line-height: 18.221px; width: 15px;">hj</textarea></body></html>
