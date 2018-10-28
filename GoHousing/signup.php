@@ -1,14 +1,18 @@
-<div style="background-color: #f4ecf7
-;width:100%;height:325%;">
-
-    <center>
-
+<html>
+<title>Sign up your account</title>
 
 
 
 
             <?php
 
+            $haserr=0;
+            $passmatch=0;
+            $shortpass=0;
+            $invEmail=0;
+            $weakpass=0;
+            $emory=0;
+            $taken=0;
 
 
 
@@ -17,12 +21,77 @@
             $user['email']=$_POST['email'];
             $user['pass']=$_POST['pass'];
             $user['repass']=$_POST['repass'];
-            if($user['repass']==$user['pass'])
+            //echo($user['email']);
+            //echo('<br>');
+            //echo($user['pass']);
+           // echo('<br>');
+            //echo($user['repass']);
+            if (!filter_var($user['email'], FILTER_VALIDATE_EMAIL)) {
+                $emailErr = "Invalid email format";
+                $invalidEmail=1;
+               $haserr=1;
+
+            }else
             {
-                $uid=mt_rand(0,100000);
-                print("<p>");
-                print("</p>");
-                print("Your User Id is: ".$uid);
+            $split=explode('@',$user['email']);
+            //echo($split[1]);
+            if (!($split[1]==="emory.edu"))
+                {$haserr=1;
+                $emory=1;}
+
+            }
+
+
+
+            $mysqli = new mysqli("localhost", "root", "practicum370", "GoHousin");
+
+            if (mysqli_connect_errno())            # ------ check connection error
+            {
+                printf("Connect failed: %s\n", mysqli_connect_error());
+                exit(1);
+            }
+            $ifrepeat="select * from login where email='".$user['email']."'";
+            $result = mysqli_query($mysqli, $ifrepeat);
+           // echo(mysqli_num_rows($result));
+            print("<br>");
+            if (mysqli_num_rows($result) != 0)
+            {$haserr=1;
+            $taken=1;}
+            $mysqli->close();
+
+
+
+
+            if(strlen($user['pass'])<8)
+            { $haserr=1;
+            $shortpass=1;
+
+
+            }
+            elseif(!preg_match('/[A-Za-z]/', $user['pass']) || !preg_match('/[0-9]/', $user['pass']))
+            { $haserr=1;
+            $weakpass=1;
+            }
+            elseif(!($user['repass']===$user['pass']))
+            {$haserr=1;
+            $passmatch=1;
+
+            }
+            //echo($haserr);
+            //echo($invalidEmail);
+            //echo($shortpass);
+           // echo($weakpass);
+            //echo($passmatch);
+
+
+
+
+
+            //after pre-processing of emial and password, has two states, signup or reenter
+            if($haserr==0)
+            {
+
+
             $mysqli = new mysqli("localhost", "root", "practicum370", "GoHousin");
 
                 if (mysqli_connect_errno())            # ------ check connection error
@@ -31,16 +100,30 @@
                     exit(1);
                 }
 
-                print("<p>");
-                print("</p>");
-                $insert="insert into login (id,email,password)  values(".$uid.",'". $user['email']."','". $user['pass']. "')";
+                print("<br>");
+
+                $uid=mt_rand(0,100000);
+                $checkId="select * from login where id=".$uid;
+                $result = mysqli_query($mysqli, $chekId);
+
+                while(mysqli_num_rows($result) > 0)
+                {$uid=mt_rand(0,100000);
+               $checkId="select * from login where id=".$uid;
+               $result = mysqli_query($mysqli, $ifrepeat);}
+
+
+
+                $pass_hash=password_hash($pass,PASSWORD_DEFAULT);
+                //echo($pass_hash);
+                session_start();
+                $_SESSION['id']=$uid;
+                $insert="insert into login (id,email,password)  values(".$uid.",'". $user['email']."','". $pass_hash. "')";
 
                 if ($mysqli->query($insert) === TRUE) {
                     echo "Your account has been set up";
                 } else {
                     echo "Error: " . $insert . "<br>" . $mysqli->error;
                 }
-
 
 
                 print("<div class = \"container-profile\">
@@ -55,12 +138,23 @@
             <br>
             <div class= \"Name\">
                     <span class= \"txt1\">
-                        Name
+                        First Name
                     </span>
             </div>
             <div class=\"input-title\">
-                <input class = \"input1\" type=\"text\" name=\"Name\" >
+                <input class = \"input1\" type=\"text\" name=\"FirstName\" >
             </div>
+            
+            <div class= \"Name\">
+                    <span class= \"txt1\">
+                        Last Name
+                    </span>
+            </div>
+            <div class=\"input-title\">
+                <input class = \"input1\" type=\"text\" name=\"LastName\" >
+            </div>
+            
+            
 
             <div class=\"School\">
                     <span class=\"txt1\">
@@ -80,7 +174,7 @@
               <select name=\"Gender\">
     <option value=\"Male\">Male</option>
     <option value=\"Female\">Female</option>
-    <option value=\"NA\">Prefer not to answer</option>
+    <option value=\"Third\">Prefer not to answer</option>
   </select>
 
             <br>
@@ -93,12 +187,12 @@
             </div>
             
             <select name=\"Year\">
-    <option value=\"Male\">Freshman</option>
-    <option value=\"Female\">Sophomore</option>
-    <option value=\"NA\">Junior</option>
-    <option value=\"NA\">Senior</option>
-    <option value=\"NA\">Grad School</option>
-    <option value=\"NA\">I work here</option>
+    <option value=\"Freshman\">Freshman</option>
+    <option value=\"Sophomore\">Sophomore</option>
+    <option value=\"Junior\">Junior</option>
+    <option value=\"Senior\">Senior</option>
+    <option value=\"Grad\">Grad School</option>
+    <option value=\"staff\">I work here</option>
   </select>
 
             <br>
@@ -113,7 +207,7 @@
 
         </form>
     </div>");
-                $conn->close();
+                $mysqli->close();
 
 
 
@@ -122,8 +216,27 @@
 
 
 
-            else{
-                print("Passwords doesn't match");
+            else{ if($invalidEmail==1)
+                print('Email is invalid');
+            elseif($emory==1)
+                print("Please use your emory Email to Sign Up");
+            elseif($taken==1)
+                print("This email address has been taken");
+            elseif($shortpass==1)
+            print("password must contain at least 8 letters or numbers");
+            elseif($weakpass==1)
+            print("password must contain letters and numbers");
+            elseif($passmatch==1)
+            print("passwords don't match, try again");
+
+
+
+
+
+
+
+
+
                 print("<div class = \"container-login\">
         <form class = \"form-login\" action=\"http://www.gohousin.com/signup.php\"
               method=\"post\">
@@ -182,7 +295,4 @@
             ?>
 
 
-    </center>
-
-
-</div>
+</html>
