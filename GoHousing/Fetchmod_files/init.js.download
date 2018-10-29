@@ -1,0 +1,259 @@
+  //login toggles
+  function toggle_login(id1, id2) {
+    var e1 = document.getElementById(id1);
+    var e2 = document.getElementById(id2);
+    $(e1).fadeOut(0);
+    if (id1 == 'newloginmodal') {
+        $('#loginmodal').css("max-width", "650px");
+    } else if (id1 == 'newsignupmodal') {
+        $('#loginmodal').css("max-width", "550px");
+    }
+    setTimeout(function() {
+        $(e2).fadeIn(100);
+    }, 100);
+} 
+    
+
+
+
+	$(function(){ //Verify's the email form on signup
+	$('#submit-form-btn').click(function(e){
+		var emailVal = $("#email1").val();
+		$.ajax({
+			url: basey + '/VerifySignup/verify_email',
+			dataType:'json',
+			method:'POST',
+			data:{'email1':emailVal},
+			success:function(data,status){
+				if(status==='success' && data.success){
+					//status is success and server return find
+					$('#signup-form').submit();
+				}else{
+					$('#email1').css('border','1px solid red');
+
+				}
+			}
+		});
+		e.preventDefault();
+
+	});
+
+  $(document).ready(function(){
+    $('.tooltipped').tooltip();
+  });
+       
+
+
+    // Navbar
+    $(".button-collapse").sidenav();
+
+    /*
+    var categories = $('nav .categories-container');
+    if (categories.length) {
+      categories.pushpin({ top: categories.offset().top });
+      var $links = categories.find('li');
+      $links.each(function() {
+        var $link = $(this);
+        $link.on('click', function() {
+          $links.removeClass('active');
+          $link.addClass('active');
+          var hash = $link.find('a').first()[0].hash.substr(1);
+          var $galleryItems = $('.gallery .gallery-item');
+
+          $galleryItems.stop().addClass('gallery-filter').fadeIn(100);
+
+          if (hash !== 'all') {
+            var $galleryFilteredOut = $galleryItems.not('.' + hash).not('.all');
+            $galleryFilteredOut.removeClass('gallery-filter').hide();
+          }
+
+          // transition layout
+          $masonry.masonry({
+            transitionDuration: '.3s'
+          });
+          // only animate on layout
+          $masonry.one( 'layoutComplete', function( event, items ) {
+            $masonry.masonry({
+              transitionDuration: 0
+            });
+          });
+          setTimeout(function() {
+
+          $masonry.masonry('layout');
+          }, 1000);
+        });
+      });
+    }
+*/
+
+	  // Home
+
+
+/*
+    // Masonry Grid
+    var $masonry = $('.gallery');
+    $masonry.masonry({
+      // set itemSelector so .grid-sizer is not used in layout
+      itemSelector: '.gallery-filter',
+      // use element for option
+      columnWidth: '.gallery-filter',
+      // no transitions
+      transitionDuration: 0
+    });
+    // layout Masonry after each image loads
+    $masonry.imagesLoaded(function() {
+      $masonry.masonry('layout');
+    });
+    $('a.filter').click(function (e) {
+      e.preventDefault();
+    });
+
+*/
+
+    // Contact Form Icon
+    $("form .form-control").focus(function() {
+      $(this).siblings("label").first().children("i").first().css({"color": "#aaa", "left": 0});
+    });
+    $("form .form-control").blur(function() {
+      $(this).siblings("label").first().children("i").first().css({"color": "transparent", "left": "-20px"});
+    });
+
+
+    var onShow = function(el) {
+      var carousel = el.find('.carousel.initialized');
+      carousel.carousel({
+        dist: 0,
+        padding: 10
+      });
+    };
+    /*
+    $('.gallery-expand').galleryExpand({
+  onShow: function(el) {
+    // Tabs
+    $('ul.tabs').tabs();
+  }
+});
+    $('.blog .gallery-expand').galleryExpand({
+      onShow: onShow,
+      fillScreen: true,
+      inDuration: 500,
+    });
+*/
+	}); // end of document ready
+
+
+
+
+/*
+     * LetterAvatar
+     * 
+     * Artur Heinze
+     * Create Letter avatar based on Initials
+     * based on https://gist.github.com/leecrossley/6027780
+
+     now used by fetchmi xD
+     */
+    (function(w, d){
+
+
+        function LetterAvatar (name, size) {
+
+            name  = name || '';
+            size  = size || 60;
+
+
+        var colours = [
+                "#1abc9c", "#2ecc71", "#3498db", "#9b59b6", "#34495e", "#16a085", "#27ae60", "#2980b9", "#8e44ad", "#2c3e50", 
+                "#f1c40f", "#e67e22", "#e74c3c", "#ecf0f1", "#95a5a6", "#f39c12", "#d35400", "#c0392b", "#bdc3c7", "#7f8c8d"
+            ],
+
+                nameSplit = String(name).toUpperCase().split(' '),
+                initials, charIndex, colourIndex, canvas, context, dataURI;
+
+
+            if (nameSplit.length == 1) {
+                initials = nameSplit[0] ? nameSplit[0].charAt(0):'?';
+            } else {
+                initials = nameSplit[0].charAt(0) + nameSplit[1].charAt(0);
+            }
+
+            if (w.devicePixelRatio) {
+                size = (size * w.devicePixelRatio);
+            }
+                
+            charIndex     = (initials == '?' ? 72 : initials.charCodeAt(0)) - 64;
+            colourIndex   = charIndex % 20;
+            canvas        = d.createElement('canvas');
+            canvas.width  = size;
+            canvas.height = size;
+            context       = canvas.getContext("2d");
+             
+            context.fillStyle = colours[colourIndex - 1];
+            context.fillRect (0, 0, canvas.width, canvas.height);
+            context.font = Math.round(canvas.width/2)+"px Arial";
+            context.textAlign = "center";
+            context.fillStyle = "#FFF";
+            context.fillText(initials, size / 2, size / 1.5);
+
+            dataURI = canvas.toDataURL();
+            canvas  = null;
+
+            return dataURI;
+        }
+
+        LetterAvatar.transform = function() {
+
+            Array.prototype.forEach.call(d.querySelectorAll('img[avatar]'), function(img, name) {
+                name = img.getAttribute('avatar');
+                img.src = LetterAvatar(name, img.getAttribute('width'));
+                img.removeAttribute('avatar');
+                img.setAttribute('alt', name);
+            });
+        };
+
+
+        // AMD support
+        if (typeof define === 'function' && define.amd) {
+            
+            define(function () { return LetterAvatar; });
+        
+        // CommonJS and Node.js module support.
+        } else if (typeof exports !== 'undefined') {
+            
+            // Support Node.js specific `module.exports` (which can be a function)
+            if (typeof module != 'undefined' && module.exports) {
+                exports = module.exports = LetterAvatar;
+            }
+
+            // But always support CommonJS module 1.1.1 spec (`exports` cannot be a function)
+            exports.LetterAvatar = LetterAvatar;
+
+        } else {
+            
+            window.LetterAvatar = LetterAvatar;
+
+            d.addEventListener('DOMContentLoaded', function(event) {
+                LetterAvatar.transform();
+            });
+        }
+
+    })(window, document);
+
+$(document).ready(function(){
+    $('.collapsible').collapsible();
+
+    $('.dropdowns').dropdown({
+        inDuration: 300,
+        outDuration: 225,
+        constrainWidth: true, // Does not change width of dropdown to that of the activator
+        hover: false, // Activate on hover
+        gutter: 0, // Spacing from edge
+        coverTrigger: false, // Displays dropdown below the button
+        alignment: 'left', // Displays dropdown with edge aligned to the left of button
+        stopPropagation: false // Stops event propagation
+      }
+    );
+});
+   
+
+
