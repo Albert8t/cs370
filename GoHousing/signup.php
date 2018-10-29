@@ -115,7 +115,6 @@
 
                 $pass_hash=password_hash($pass,PASSWORD_DEFAULT);
                 //echo($pass_hash);
-                session_start();
                 $_SESSION['id']=$uid;
                 $insert="insert into login (id,email,password)  values(".$uid.",'". $user['email']."','". $pass_hash. "')";
 
@@ -132,6 +131,8 @@
             <div class=\"dialog\">
                 <a href=\"index.html\" class=\"close-thick\"></a>
             </div>
+             <input type=\"hidden\" id=\"id\" name=\"id\" value=$uid>
+            <br>
             <span class=\"title-signin\">
                 Now it's time to complete your profile
             </span>
