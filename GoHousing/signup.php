@@ -113,7 +113,7 @@
 
 
 
-                $pass_hash=password_hash($pass,PASSWORD_DEFAULT);
+                $pass_hash=password_hash($pass,PASSWORD_BCRYPT);
                 //echo($pass_hash);
                 $_SESSION['id']=$uid;
                 $insert="insert into login (id,email,password)  values(".$uid.",'". $user['email']."','". $pass_hash. "')";
