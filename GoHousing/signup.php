@@ -126,7 +126,7 @@
 
 
                 print("<div class = \"container-profile\">
-        <form class = \"form-profile\" action=\"http://www.gohousin.com/profile.php\"
+        <form class = \"form-profile\" action=\"http://www.gohousin.com/profile.php?type=1\"
               method=\"post\">
             <div class=\"dialog\">
                 <a href=\"index.html\" class=\"close-thick\"></a>
