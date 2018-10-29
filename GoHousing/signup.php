@@ -113,7 +113,7 @@
 
 
 
-                $pass_hash=password_hash($pass,PASSWORD_DEFAULT);
+                $pass_hash=password_hash($pass,PASSWORD_BCRYPT);
                 //echo($pass_hash);
                 $_SESSION['id']=$uid;
                 $insert="insert into login (id,email,password)  values(".$uid.",'". $user['email']."','". $pass_hash. "')";
@@ -126,7 +126,7 @@
 
 
                 print("<div class = \"container-profile\">
-        <form class = \"form-profile\" action=\"http://www.gohousin.com/profile.php?type=1\"
+        <form class = \"form-profile\" action=\"http://www.gohousin.com/profile.php\"
               method=\"post\">
             <div class=\"dialog\">
                 <a href=\"index.html\" class=\"close-thick\"></a>
