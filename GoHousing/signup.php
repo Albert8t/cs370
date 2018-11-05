@@ -15,6 +15,7 @@
     <title>Title</title>
 </head>
 <body>
+<div class = "limiter">
     <?php
         $haserr=0;
         $passmatch=0;
@@ -82,13 +83,17 @@
              $_SESSION['id']=$uid;
              $insert="insert into login (id,email,password)  values(".$uid.",'". $user['email']."','". $pass_hash. "')";
              if ($mysqli->query($insert) === TRUE) {
-                 echo "<p align='center'> <font color=blue  size='6pt'> Your account has been set up </font> </p>";
+                 ?>
+                 <span class = "title-signin">
+                     Your account has been set up!
+                 </span>
+                 <?php
              } else {
                  echo "Error: " . $insert . "<br>" . $mysqli->error;
              }
              ?>
              <div class = "container-profile">
-                 <form class = "form-profile" action = "http://www.gohousin.com/profile.php" method = "post">
+                 <form class = "form-login" action = "http://www.gohousin.com/profile.php" method = "post">
                      <span class="title-signin">
                         Now it's time to complete your profile
                      </span>
@@ -148,7 +153,9 @@
                      <br>
                      <div class="login-button">
                          <button class="button-form">
-                             Submit
+                             <a href="http://www.gohousin.com/signup.php">
+                                 Submit
+                             </a>
                          </button>
                      </div>
                  </form>
@@ -176,6 +183,7 @@
                                 Passwords don't match, try again <?php
                             }
                             ?>
+                         <br>
                          Please retype your information
                      </span>
                      <br>
@@ -220,6 +228,6 @@
 
             <?php }
     ?>
-
+</div>
 </body>
 </html>
