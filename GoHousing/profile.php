@@ -63,7 +63,7 @@
             $sex = 2;
         }
         $id = intval($id);
-        $insert = "insert into profile (uid,fname,lname,school, gender,year)  values(" . $id . "','" . $profile['FirstName'] . "','" . $profile['LastName'] . "','" . $profile['school'] . "'," . $sex . ",'" . $profile['year'] . "')";
+            $insert = "insert into profile (uid,fname,lname,school, gender,year)  values(" . $id . ",'" . $profile['FirstName'] . "','" . $profile['LastName'] . "','" . $profile['school'] . "'," . $sex . ",'" . $profile['year'] . "')";
         if ($mysqli->query($insert) === TRUE) {
             ?>
     <section class="hero-section spad">
@@ -74,7 +74,7 @@
                         <div class="col-lg-6">
                             <div class="hero-text">
                                 <h2>
-                                    <?php>
+                                    <?php
                                     echo $profile['FirstName'] . " " . $profile['LastName'];
                                     ?>
                                 </h2>
@@ -83,7 +83,7 @@
                             <div class="hero-info">
                                 <ul>
                                     <li><span>school</span>
-                                        <?php>
+                                        <?php
                                             echo $profile['school'];
                                         ?>
                                     </li>
@@ -127,7 +127,8 @@
                 $result = mysqli_query($mysqli, $ifExist);
                 if (mysqli_num_rows($result) == 0) {
                     echo("No account yet");
-                    header("Location: http://gohousin.com/signup.php");
+                    print("<a class=\"navbar-brand\" href=\"http://gohousin.com/signup.php\">Sign Up for a New Account</a>");
+
                     exit;
                 }
                 $row = $result->fetch_assoc();
@@ -136,12 +137,14 @@
                 echo($hashed);
                 echo('<br>');
                 echo($row['email']);
+            $rehash=md5($pass);
                 echo('<br>');
-                echo(strlen($hashed));
+                echo($rehash);
                 echo('<br>');
+
                 echo('<br>');
-            if (password_verify($pass,$hashed)) {
-                echo('tohere');
+            if ($rehash===$hashed) {
+                echo('Login Success');
                 $signin = true;
             } else {
                 echo("incorrect password, try again");

@@ -12,9 +12,9 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
 
-    <title>Title</title>
+    <title>One Moment Your Account Will Be Set Up Soon</title>
 </head>
-<body>
+<body background="http://gohousin.com/sign.jpeg">
 <div class = "limiter">
     <?php
         $haserr=0;
@@ -79,7 +79,7 @@
                  $checkId="select * from login where id=".$uid;
                  $result = mysqli_query($mysqli, $ifrepeat);
              }
-             $pass_hash=password_hash($pass,PASSWORD_BCRYPT);
+             $pass_hash=md5($user['pass']);
              $_SESSION['id']=$uid;
              $insert="insert into login (id,email,password)  values(".$uid.",'". $user['email']."','". $pass_hash. "')";
              if ($mysqli->query($insert) === TRUE) {
@@ -91,84 +91,98 @@
              } else {
                  echo "Error: " . $insert . "<br>" . $mysqli->error;
              }
-             ?>
-             <div class = "container-profile">
-                 <form class = "form-login" action = "http://www.gohousin.com/profile.php" method = "post">
-                     <span class="title-signin">
-                        Now it's time to complete your profile
-                     </span>
-                     <br>
-                     <div class= "username">
-                         <span class= "txt1">
-                            First Name
-                         </span>
-                     </div>
-                     <div class="input-title">
-                         <input class = "input1" type="text" name="FirstName" >
-                     </div>
 
-                     <div class= "username">
-                         <span class= "txt1">
-                            Last Name
-                         </span>
-                     </div>
-                     <div class="input-title">
-                         <input class = "input1" type="text" name="LastName" >
-                     </div>
+             print("<div class = \"container-profile\">
+        <form class = \"form-profile\" action=\"http://www.gohousin.com/profile.php\"
+              method=\"post\">
+            <div class=\"dialog\">
+                <a href=\"index.html\" class=\"close-thick\"></a>
+            </div>
+             <input type=\"hidden\" id=\"id\" name=\"id\" value=$uid>
+            <br>
+            <span class=\"title-signin\">
+                Now it's time to complete your profile
+            </span>
+            <br>
+            <div class= \"Name\">
+                    <span class= \"txt1\">
+                        First Name
+                    </span>
+            </div>
+            <div class=\"input-title\">
+                <input class = \"input1\" type=\"text\" name=\"FirstName\" >
+            </div>
+            
+            <div class= \"Name\">
+                    <span class= \"txt1\">
+                        Last Name
+                    </span>
+            </div>
+            <div class=\"input-title\">
+                <input class = \"input1\" type=\"text\" name=\"LastName\" >
+            </div>
+            
+            
 
-                     <div class= "username">
-                         <span class= "txt1">
-                            Your University
-                         </span>
-                     </div>
-                     <div class="input-title">
-                         <input class = "input1" type="text" name="uni" >
-                     </div>
+            <div class=\"School\">
+                    <span class=\"txt1\">
+							Your University
+                    </span>
+            </div>
+            <div class=\"input-title\">
+                <input class=\"input1\" type=\"text\" name=\"uni\" >
+            </div>
 
-                     <div class= "username">
-                         <span class= "txt1">
-                            Gender
-                         </span>
-                     </div>
-                     <select name="Gender">
-                         <option value="Male">Male</option>
-                         <option value="Female">Female</option>
-                         <option value="Third">Prefer not to answer</option>
-                     </select>
+            <div class=\"Gender\">
+                    <span class=\"txt1\">
+							Gender
+                    </span>
+            </div>
+            
+              <select name=\"Gender\">
+    <option value=\"Male\">Male</option>
+    <option value=\"Female\">Female</option>
+    <option value=\"Third\">Prefer not to answer</option>
+  </select>
 
-                     <div class= "username">
-                         <span class= "txt1">
-                            Year
-                         </span>
+            <br>
+            <br>
+            
+              <div class=\"Year\">
+                    <span class=\"txt1\">
+						Year	
+                    </span>
+            </div>
+            
+            <select name=\"Year\">
+    <option value=\"Freshman\">Freshman</option>
+    <option value=\"Sophomore\">Sophomore</option>
+    <option value=\"Junior\">Junior</option>
+    <option value=\"Senior\">Senior</option>
+    <option value=\"Grad\">Grad School</option>
+    <option value=\"staff\">I work here</option>
+  </select>
+
+            <br>
+            <br>
+
+            <div class=\"submit-button\">
+                <button class=\"button-form\" ng-click=\"isShowHide1('show')\">
+                    submit
+                </button>
+            </div>
+            <br>
+
+        </form>
+    </div>");   $mysqli->close();  }else {
+             print("<div class = \"container-login\">
+                 <form class = \"form-login\" action=\"http://www.gohousin.com/signup.php\" method=\"post\">
+                     <div class=\"dialog\">
+                         <a href=\"index.html\" class=\"close-thick\"></a>
                      </div>
-                     <select name="Year">
-                         <option value="Freshman">Freshman</option>
-                         <option value="Sophomore">Sophomore</option>
-                         <option value="Junior">Junior</option>
-                         <option value="Senior">Senior</option>
-                         <option value="Grad">Grad School</option>
-                         <option value="staff">I work here</option>
-                     </select>
-                     <br>
-                     <br>
-                     <div class="login-button">
-                         <button class="button-form">
-                             <a href="http://www.gohousin.com/signup.php">
-                                 Submit
-                             </a>
-                         </button>
-                     </div>
-                 </form>
-             </div>
-    <?php   $mysqli->close();  }else {
-             ?>
-             <div class = "container-login">
-                 <form class = "form-login" action="http://www.gohousin.com/signup.php" method="post">
-                     <div class="dialog">
-                         <a href="index.html" class="close-thick"></a>
-                     </div>
-                     <span class="txt2">
-                         <?php
+                     <span class=\"txt2\">");
+
+
                             if($invalidEmail==1) { ?>
                                 Email is invalid <?php
                             } else if ($emory == 1) { ?>
