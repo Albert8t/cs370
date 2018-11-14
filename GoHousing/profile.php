@@ -32,7 +32,7 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="information%20review.html" class="nav-link">Information Reivew</a></li>
+                <li class="nav-item"><a href="http://www.gohousin.com/app/information%20review/GablesReview.php" class="nav-link">Information Reivew</a></li>
                 <li class="nav-item"><a href="../information%20sharing/information%20sharing.html" class="nav-link">Information Sharing</a></li>
                 <li class="nav-item"><a href="../roommate%20searching/roommate%20searching.html" class="nav-link">Roommate Searching</a></li>
                 <li class="nav-item"><a href="../aboutus/about.html" class="nav-link">About Us</a></li>
@@ -43,8 +43,10 @@
 </nav>
 <body>
 	<?php
+    session_start();
 		if (!empty($_POST['FirstName'])) {
 		    $id = $_POST['id'];
+		    $email=$_POST['email'];
             $profile['FirstName']= $_POST['FirstName'];
             $profile['LastNmae'] = $_POST['LastName'];
             $profile['school'] = $_POST['uni'];
@@ -65,6 +67,15 @@
         $id = intval($id);
             $insert = "insert into profile (uid,fname,lname,school, gender,year)  values(" . $id . ",'" . $profile['FirstName'] . "','" . $profile['LastName'] . "','" . $profile['school'] . "'," . $sex . ",'" . $profile['year'] . "')";
         if ($mysqli->query($insert) === TRUE) {
+
+            $_SESSION['username']=$email;
+            $_SESSION['loggedin']=true;
+
+            echo('<br>');
+            echo($_SESSION['username']);
+            echo('<br>');
+            echo($_SESSION['loggedin']);
+            echo('<br>');
             ?>
     <section class="hero-section spad">
         <div class="container-fluid">
@@ -115,9 +126,11 @@
 	                echo "insert error";
 	            }
 	            $mysqli->close();
-	        } else{
+	        }
+	        else {
 		        $login['email'] = $_POST['email'];
                 $pass =  (string)$_POST['pass'];
+                $up=$_POST['up'];
                 $mysqli = new mysqli("localhost", "root", "practicum370", "GoHousin");
                 if (mysqli_connect_errno())   {
                     printf("Connect failed: %s\n", mysqli_connect_error());
@@ -127,25 +140,70 @@
                 $result = mysqli_query($mysqli, $ifExist);
                 if (mysqli_num_rows($result) == 0) {
                     echo("No account yet");
+                    echo('<br>');
                     print("<a class=\"navbar-brand\" href=\"http://gohousin.com/signup.php\">Sign Up for a New Account</a>");
+                    echo('<br>');
+                    print("OR Sign In To Your Account");
+                    echo('<br>');
+                    print("<div class = \"container-login\">
+        <form class = \"form-login\"  ACTION=\"http://www.gohousin.com/profile.php\" METHOD=\"POST\">
 
+            <div class=\"dialog\">
+                <a href=\"index.html\" class=\"close-thick\"></a>
+            </div>
+            <br>
+            <br>
+            <input type=\"hidden\" id=\"up\" name=\"up\" value=true>
+            <div class= \"email\">
+                    <span class= \"txt1\">
+                        Email
+                    </span>
+            </div>
+            <div class=\"input-title\">
+                <input class = \"input1\" type=\"text\" name=\"email\" >
+            </div>
+
+            <div class=\"password\">
+                    <span class=\"txt1\">
+							Password
+                    </span>
+                <a href=\"app/login/forgotpassword.html\" class=\"txt2\">
+                    Forgot?
+                </a>
+            </div>
+            <div class=\"input-title\">
+                <input class=\"input1\" type=\"password\" name=\"pass\" >
+            </div>
+            <br>
+            <br>
+            <div class=\"login-button\">
+                <button class=\"button-form\" ng-click=\"isShowHide('show')\">
+                    Sign In
+                </button>
+            </div>
+            <br>
+        </form>
+    </div>");
                     exit;
                 }
                 $row = $result->fetch_assoc();
                 $hashed =  (string)$row['password'];
                 $signin = false;
-                echo($hashed);
-                echo('<br>');
-                echo($row['email']);
-            $rehash=md5($pass);
-                echo('<br>');
-                echo($rehash);
-                echo('<br>');
 
-                echo('<br>');
+            $rehash=md5($pass);
+
             if ($rehash===$hashed) {
+
                 echo('Login Success');
                 $signin = true;
+                $_SESSION['username']=$login['email'];
+                $_SESSION['loggedin']=true;
+
+                echo('<br>');
+                print($_SESSION['username']);
+                echo('<br>');
+                print($_SESSION['loggedin']);
+                echo('<br>');
             } else {
                 echo("incorrect password, try again");
             }
