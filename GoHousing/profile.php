@@ -144,6 +144,8 @@
 
                 echo('<br>');
             if ($rehash===$hashed) {
+                $_SESSION['loggedin'] = true;
+                $_SESSION['username'] = $email;
                 echo('Login Success');
                 $signin = true;
             } else {
