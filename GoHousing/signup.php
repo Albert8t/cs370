@@ -91,7 +91,7 @@
              } else {
                  echo "Error: " . $insert . "<br>" . $mysqli->error;
              }
-
+                $email=$_POST['email'];
              print("<div class = \"container-profile\">
         <form class = \"form-profile\" action=\"http://www.gohousin.com/profile.php\"
               method=\"post\">
@@ -99,6 +99,7 @@
                 <a href=\"index.html\" class=\"close-thick\"></a>
             </div>
              <input type=\"hidden\" id=\"id\" name=\"id\" value=$uid>
+             <input type=\"hidden\" id=\"email\" name=\"email\" value=$email>
             <br>
             <span class=\"title-signin\">
                 Now it's time to complete your profile
