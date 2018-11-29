@@ -75,12 +75,12 @@
     }
 
     .text-center {
-        font-size: 2.75em !important;
+        font-size: 2.00em !important;
         color: saddlebrown;
         text-overflow: ellipsis;
-        top: 30% !important;
+        top: 34% !important;
         width: 60%;
-        left: 20%;
+        left: 21%;
     }
 
     /* body */
@@ -352,10 +352,11 @@
         top: 23%;
         right: 28%;
         width: 50%;
+        margin: -9%;
     }
 
     .text-center {
-        font-size: 2em !important;
+        font-size: 1.25em !important;
         color: saddlebrown;
         text-overflow: ellipsis;
         top: 30% !important;
@@ -644,7 +645,7 @@
     }
 
     .text-center {
-        font-size: 1.4em !important;
+        font-size: 1.2em !important;
         color: saddlebrown;
         text-overflow: ellipsis;
         top: 30% !important;
@@ -942,7 +943,7 @@
     }
 
     .text-center {
-        font-size: 1.6em !important;
+        font-size: 1.2em !important;
         color: saddlebrown;
         text-overflow: ellipsis;
         top: 30% !important;
@@ -1165,7 +1166,7 @@
 
 }
 
-@media screen and (max-width: 600px) and (min-width: 410px) and  (min-height: 700px){
+@media screen and (max-width: 600px) and (min-width: 400px) and  (min-height: 730px){
     body, html {
         /*height: 100%;*/
         /*width: 100%;*/
@@ -1238,7 +1239,7 @@
     }
 
     .text-center {
-        font-size: 1.6em !important;
+        font-size: 1.2em !important;
         color: saddlebrown;
         text-overflow: ellipsis;
         top: 30% !important;
@@ -1537,7 +1538,7 @@
     }
 
     .text-center {
-        font-size: 2.75em !important;
+        font-size: 2.25em !important;
         color: saddlebrown;
         text-overflow: ellipsis;
         top: 30% !important;
@@ -1820,7 +1821,7 @@
     }
 
     .text-center {
-        font-size: 2.75em !important;
+        font-size: 2.25em !important;
         color: saddlebrown;
         text-overflow: ellipsis;
         top: 30% !important;
