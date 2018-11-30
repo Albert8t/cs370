@@ -40,7 +40,7 @@
         $email=$_POST['email'];
         $mess=$_POST['message'];
 
-        $to = "renxuanli2020@gmail.com";
+        $to = "gohousinofficial@gmail.com";
         $subject = "Message from ".$name." at ".$email;
         if($name!='')
         {
@@ -67,7 +67,7 @@
 
 
 
-			<form class="contact100-form validate-form" ACTION="http://gohousin.com/app/contact/contact.php"
+			<form class="contact100-form validate-form" ACTION="contact.php"
 				  METHOD="POST">
 				<span class="contact100-form-title">
 					Contact Us

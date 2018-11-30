@@ -172,7 +172,8 @@ for( $i=0;$i<$rowNum;$i++)
     print("</div>
     </div>
 </div>");
-
+  print('<br>');
+    print('<br>');
 
 }
 $mysqli->close();

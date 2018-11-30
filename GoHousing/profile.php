@@ -184,7 +184,7 @@
             <br>
         </form>
     </div>");
-                    exit;
+
                 }
                 $row = $result->fetch_assoc();
                 $hashed =  (string)$row['password'];
