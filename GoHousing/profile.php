@@ -32,7 +32,7 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="information%20review.html" class="nav-link">Information Reivew</a></li>
+                <li class="nav-item"><a href="http://www.gohousin.com/app/information%20review/GablesReview.php" class="nav-link">Information Reivew</a></li>
                 <li class="nav-item"><a href="../information%20sharing/information%20sharing.html" class="nav-link">Information Sharing</a></li>
                 <li class="nav-item"><a href="../roommate%20searching/roommate%20searching.html" class="nav-link">Roommate Searching</a></li>
                 <li class="nav-item"><a href="../aboutus/about.html" class="nav-link">About Us</a></li>
@@ -184,7 +184,7 @@
             <br>
         </form>
     </div>");
-                    exit;
+
                 }
                 $row = $result->fetch_assoc();
                 $hashed =  (string)$row['password'];

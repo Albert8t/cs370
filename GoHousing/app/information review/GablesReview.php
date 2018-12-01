@@ -56,29 +56,75 @@
 </div>
 <br>
 <br>
+<?php
 
-<div class = "reviewtitle">
-    <div class = "reviewinput">
-        <form form class = "form-login"  ACTION="GablesReview.php" METHOD="POST">
+session_start();
+//print($_SESSION['loggedin']);
+//print($_SESSION['username']);
+if(!$_SESSION['loggedin'])
+print( "<center><a class=\"navbar-brand\" href=\"http://gohousin.com/profile.php\">Sign In To Write Down Your Review</a></center>");
+else
+print("<div class = \"reviewtitle\">
+    <div class = \"reviewinput\">
+        <form form class = \"form-login\"  ACTION=\"GablesReview.php\" METHOD=\"POST\">
             <h3>Please fill in your reviews</h3>
+
             <p>Your reviews help other learn about Gables Montclair.</p>
-            <input class = "input1" type="textarea" name="review">
-            <input type="hidden" id="give" name="give" value=true>
-            <input type="submit" value="Submit">
+            <textarea name= \"review\" rows=\"5\" cols=\"105\"></textarea>
+            <br>
+            <p>Give A Rate Of GablesMontClair From 0 to 10 </p>
+            <input type=\"range\" name=\"points\" min=\"0\" max=\"10\">
+            <input type=\"hidden\" id=\"give\" name=\"give\" value=true>
+            <input type=\"submit\" value=\"Submit\">
         </form>
     </div>
 </div>
 <br>
 <br>
-<div class = "gapbetween">
-    <div class="row mb-5">
-        <div class="col-md-7 section-heading">
-            <span class="subheading-sm">Guest Reviews</span>
+<div class = \"gapbetween\">
+    <div class=\"row mb-5\">
+        <div class=\"col-md-7 section-heading\">
+            <span class=\"subheading-sm\">Guest Reviews</span>
             <h3>Here are the reviews for Gables Montclair</h3>
         </div>
     </div>
-</div>
-<?php
+</div>");
+
+if($_POST['give']) {
+    $email = $_SESSION['username'];
+    // print($_SESSION['username']);
+
+    //  print('<br>');
+    $mysqli = new mysqli("localhost", "root", "practicum370", "GoHousin");
+    if (mysqli_connect_errno()) {
+        printf("Connect failed: %s\n", mysqli_connect_error());
+        exit(1);
+    }
+    //  print($email);
+    $namequ = "select * from login join profile on login.id=profile.uid where email='$email';";
+    //  print('<br>');
+    // print($namequ);
+    $nameres = $mysqli->query($namequ);
+    // print(mysqli_num_rows($nameres));
+    $nameRow = $nameres->fetch_assoc();
+    $name = $nameRow['fname'];
+    //print($name);
+
+    $insert = "insert into review (user,house,context,rating)  values('" . $name . "','" . "GablesMontclair" . "','" . $_POST['review'] . "','" . $_POST['points'] . "')";
+    if ($mysqli->query($insert) === TRUE) {
+        echo(" <Center>Your Review Is Added</Center>");
+    }
+    $mysqli->close();
+}
+
+
+
+
+
+
+
+
+
 $mysqli = new mysqli("localhost", "root", "practicum370", "GoHousin");
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
@@ -103,7 +149,7 @@ for( $i=0;$i<$rowNum;$i++)
                         <div class=\"image align-self-center\"><img src=\"images/anonymous.jpg\" alt=\"Person here\"></div>
                         <div class=\"name-text align-self-center\">
                             <h2 class=\"heading\">");
-            print($row['user']." rated here ".$row['rating']."/5");
+            print($row['user']." rated here ".$row['rating']."/10");
             print("</h2>
                         </div>
                     </div>
@@ -126,38 +172,21 @@ for( $i=0;$i<$rowNum;$i++)
     print("</div>
     </div>
 </div>");
-
+  print('<br>');
+    print('<br>');
 
 }
 $mysqli->close();
 
-?>
 
 
-<?php
-session_start();
-echo("daawwa");
-
-if($_POST['give'])
-{
-    print($_SESSION['username']);
-    print($_SESSION['loggedin']);
-    print('saefda');
-    $mysqli = new mysqli("localhost", "root", "practicum370", "GoHousin");
-    if (mysqli_connect_errno()) {
-        printf("Connect failed: %s\n", mysqli_connect_error());
-        exit(1);
-    }
-    $insert = "insert into review (user,house,context,rating)  values(" . $ . ",'" ."GablesMontclair" . "','" . $_POST['review'] . "','" . 5 . "')";
-    if ($mysqli->query($insert) === TRUE)
-    {echo("added");}
 
 
-}
-else
-    echo("not succ");
 
-$mysqli->close();
+
+
+
+
 ?>
 
 
