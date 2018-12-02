@@ -65,12 +65,7 @@
             $insert = "insert into profile (uid,fname,lname,school, gender,year)  values(" . $id . ",'" . $profile['FirstName'] . "','" . $profile['LastName'] . "','" . $profile['school'] . "'," . $sex . ",'" . $profile['year'] . "')";
             if ($mysqli->query($insert) === TRUE) {
                 $_SESSION['username']=$email;
-                $_SESSION['loggedin']=true;
-                echo('<br>');
-                echo($_SESSION['username']);
-                echo('<br>');
-                echo($_SESSION['loggedin']);
-                echo('<br>');
+                $_SESSION['loggedin']=true；
      ?>
 
 <div class="block-30 block-30-sm item"  data-stellar-background-ratio="0.5">
@@ -78,7 +73,9 @@
         <div class="row align-items-center">
             <div class="col-md-10">
                 <span class="subheading-sm">Profile Page</span>
-                <h2 class="heading">Wenqin Dong</h2>
+                <h2 class="heading">
+                    Welcome to GoHousin
+                </h2>
             </div>
         </div>
     </div>
@@ -130,124 +127,191 @@
 <!--        </div>-->
 <!--    </section>-->
 
-<div class = "reviewtitle">
-    <div class = "reviewinput">
-        <h3>Here is your information</h3>
-    </div>
-</div>
+                <div class="reviewtitle">
+                    <h2>Here is your information</h2>
+                    <br>
+                    <br>
+                    <span>
+                    <h4 class = "heading">
+                        Name:
+                    </h4>
+                </span>
+                    <?php
+                    print $profile['FirstName'] . " " . $profile['LastName']; ?>
+                    <span>
+                    <h4 class = "heading">
+                        School:
+                    </h4>
+                </span>
+                    <?php
+                    print $profile['school'];
+                    ?>
+
+                    <span>
+                        <h4 class = "heading">
+                            Year:
+                        </h4>
+                </span>
+                    <?php
+                    print $profile['year'];
+                    ?>
+
+                    <span>
+                        <h4 class = "heading">
+                            Gender:
+                        </h4>
+                </span>
+                    <?php
+                    print $profile['gender'];
+                    ?>
+
+                    <br>
+                    <br>
+                    <br>
+                </div>
 
             <?php
 	            } else {
 	                echo "insert error";
 	            }
 	            $mysqli->close();
-	        }
-	        else {
-		        $login['email'] = $_POST['email'];
-                $pass =  (string)$_POST['pass'];
-                $up=$_POST['up'];
-                $mysqli = new mysqli("localhost", "root", "practicum370", "GoHousin");
-                if (mysqli_connect_errno())   {
-                    printf("Connect failed: %s\n", mysqli_connect_error());
-                    exit(1);
-                }
-                $ifExist = "select password,id, email from login where email='" . $login['email'] . "'";
-                $result = mysqli_query($mysqli, $ifExist);
-                if (mysqli_num_rows($result) == 0) {
-                    echo "No account yet";
-                    echo "<br>";
-    //                 print "<a class=\"navbar-brand\" href=\"http://gohousin.com/signup.php\">Sign Up for a New Account</a>";
-    //                 echo('<br>');
-    //                 print("OR Sign In To Your Account");
-    //                 echo('<br>');
-    //                 print("<div class = \"container-login\">
-    //     <form class = \"form-login\"  ACTION=\"http://www.gohousin.com/profile.php\" METHOD=\"POST\">
+	        } else {
+            $login['email'] = $_POST['email'];
+            $pass = (string)$_POST['pass'];
+            $up = $_POST['up'];
+            $mysqli = new mysqli("localhost", "root", "practicum370", "GoHousin");
+            if (mysqli_connect_errno()) {
+                printf("Connect failed: %s\n", mysqli_connect_error());
+                exit(1);
+            }
+            $ifExist = "select password,id, email from login where email='" . $login['email'] . "'";
+            $result = mysqli_query($mysqli, $ifExist);
+            if (mysqli_num_rows($result) == 0) {
+                echo "No account yet";
+                echo "<br>";
+                print "<a class=\"navbar-brand\" href=\"http://gohousin.com/signup.php\">Sign Up for a New Account</a>";
+                echo('<br>');
+                print("OR Sign In To Your Account");
+                echo('<br>');
+                print("<div class = \"container-login\">
+        <form class = \"form-login\"  ACTION=\"http://www.gohousin.com/profile.php\" METHOD=\"POST\">
 
-    //         <div class=\"dialog\">
-    //             <a href=\"index.html\" class=\"close-thick\"></a>
-    //         </div>
-    //         <br>
-    //         <br>
-    //         <input type=\"hidden\" id=\"up\" name=\"up\" value=true>
-    //         <div class= \"email\">
-    //                 <span class= \"txt1\">
-    //                     Email
-    //                 </span>
-    //         </div>
-    //         <div class=\"input-title\">
-    //             <input class = \"input1\" type=\"text\" name=\"email\" >
-    //         </div>
+            <div class=\"dialog\">
+                <a href=\"index.html\" class=\"close-thick\"></a>
+            </div>
+            <br>
+            <br>
+            <input type=\"hidden\" id=\"up\" name=\"up\" value=true>
+            <div class= \"email\">
+                    <span class= \"txt1\">
+                        Email
+                    </span>
+            </div>
+            <div class=\"input-title\">
+                <input class = \"input1\" type=\"text\" name=\"email\" >
+            </div>
 
-    //         <div class=\"password\">
-    //                 <span class=\"txt1\">
-				// 			Password
-    //                 </span>
-    //             <a href=\"app/login/forgotpassword.html\" class=\"txt2\">
-    //                 Forgot?
-    //             </a>
-    //         </div>
-    //         <div class=\"input-title\">
-    //             <input class=\"input1\" type=\"password\" name=\"pass\" >
-    //         </div>
-    //         <br>
-    //         <br>
-    //         <div class=\"login-button\">
-    //             <button class=\"button-form\" ng-click=\"isShowHide('show')\">
-    //                 Sign In
-    //             </button>
-    //         </div>
-    //         <br>
-    //     </form>
-    // </div>");
+            <div class=\"password\">
+                    <span class=\"txt1\">
+							Password
+                    </span>
+                <a href=\"app/login/forgotpassword.html\" class=\"txt2\">
+                    Forgot?
+                </a>
+            </div>
+            <div class=\"input-title\">
+                <input class=\"input1\" type=\"password\" name=\"pass\" >
+            </div>
+            <br>
+            <br>
+            <div class=\"login-button\">
+                <button class=\"button-form\" ng-click=\"isShowHide('show')\">
+                    Sign In
+                </button>
+            </div>
+            <br>
+        </form>
+    </div>");
 
-                }
-            //     $row = $result->fetch_assoc();
-            //     $hashed =  (string)$row['password'];
-            //     $signin = false;
+            }
+            $row = $result->fetch_assoc();
+            $hashed = (string)$row['password'];
+            $signin = false;
 
-            // $rehash=md5($pass);
+            $rehash = md5($pass);
 
-            // if ($rehash===$hashed) {
+            if ($rehash === $hashed) {
 
-            //     echo('Login Success');
-            //     $signin = true;
-            //     $_SESSION['username']=$login['email'];
-            //     $_SESSION['loggedin']=true;
 
-            //     echo('<br>');
-            //     print($_SESSION['username']);
-            //     echo('<br>');
-            //     print($_SESSION['loggedin']);
-            //     echo('<br>');
-            // } else {
-            //     echo("incorrect password, try again");
-            // }
-            // echo('end');
+                $signin = true;
+                $_SESSION['username'] = $login['email'];
+                $_SESSION['loggedin'] = true;
+
+            } else {
+                echo("incorrect password, try again");
+            }
+
             $mysqli->close();
+            ?>
+            <div class="block-30 block-30-sm item"  data-stellar-background-ratio="0.5">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-10">
+                            <span class="subheading-sm">Profile Page</span>
+                            <h2 class="heading">
+                                Welcome to GoHousin
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="reviewtitle">
+                <h2>Here is your information</h2>
+                <br>
+                <br>
+                <span>
+                    <h4 class = "heading">
+                        Name:
+                    </h4>
+                </span>
+                <?php
+                    print $profile['FirstName'] . " " . $profile['LastName']; ?>
+                <span>
+                    <h4 class = "heading">
+                        School:
+                    </h4>
+                </span>
+                    <?php
+                    print $profile['school'];
+                    ?>
+
+                <span>
+                        <h4 class = "heading">
+                            Year:
+                        </h4>
+                </span>
+                    <?php
+                    print $profile['year'];
+                    ?>
+
+                <span>
+                        <h4 class = "heading">
+                            Gender:
+                        </h4>
+                </span>
+                    <?php
+                    print $profile['gender'];
+                    ?>
+
+                <br>
+                <br>
+                <br>
+            </div>
+
+            <?php
         }
-
-    ?>
-
-
-
-    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/bootstrap-datepicker.js"></script>
-
-    <script src="js/aos.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="js/google-map.js"></script>
-    <script src="js/main.js"></script>
+?>
 </body>
 </html>
