@@ -1,23 +1,82 @@
-<?php
-session_start();
-
-    if (isset($_POST["survey"])){
-            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-               header('Location: ./survey.html/ );
-            } else {
-                echo "Please log in first to see this page.";
-            }
-        }
-?>
+//<?php
+//session_start();
+//
+//    if (isset($_POST["survey"])){
+//            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+//               header('Location: ./survey.html/ );
+//            } else {
+//                echo "Please log in first to see this page.";
+//            }
+//        }
+//?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Roommate searching page</title>
+    <title>Go Housin</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <link rel="stylesheet" href="roommate searching.css">
+
+
 </head>
+
+
 <body>
-    <input type="submit" id="survey" name="Finish Survey" value="survey" /></body>
+
+<div class="card text-center">
+  <div class="card-header">
+    Gohousing
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Click here to fill out the survey</h5>
+    <p class="card-text">Your survey result will be shown to those who match with you.</p>
+    <a href="survey.html" class="btn btn-info">Survey</a>
+  </div>
+  <div class="card-footer text-muted">
+  </div>
+</div>
+
+<div class="card-deck">
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="defaultpicture.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-info">Go somewhere</a>
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="defaultpicture.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-info">Go somewhere</a>
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="defaultpicture.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-info">Go somewhere</a>
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="defaultpicture.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-info">Go somewhere</a>
+      </div>
+    </div>
+
+</div>
 
 </html>
 

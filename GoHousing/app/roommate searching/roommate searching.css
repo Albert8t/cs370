@@ -1,0 +1,8 @@
+body {
+    background-color: whitesmoke;
+}
+
+div.card.px-2{
+    padding-left: ($spacer * .5) !important;
+    padding-right: ($spacer * .5) !important;
+}
