@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -82,50 +83,6 @@
 </div>
 <br>
 <br>
-<!--    <section class="hero-section spad">-->
-<!--        <div class="container-fluid">-->
-<!--            <div class="row">-->
-<!--                <div class="col-xl-10 offset-xl-1">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-lg-6">-->
-<!--                            <div class="hero-text">-->
-<!--                                <h2>-->
-<!--                                    --><?php
-//                                    echo $profile['FirstName'] . " " . $profile['LastName'];
-//                                    ?>
-<!--                                </h2>-->
-<!--                                <p>Welcome to GoHousin</p>-->
-<!--                            </div>-->
-<!--                            <div class="hero-info">-->
-<!--                                <ul>-->
-<!--                                    <li><span>school</span>-->
-<!--                                        --><?php
-//                                            echo $profile['school'];
-//                                        ?>
-<!--                                    </li>-->
-<!--                                    <li><span>Year</span>-->
-<!--                                        --><?php
-//                                            echo $profile['year'];
-//                                        ?>
-<!--                                    </li>-->
-<!--                                    <li><span>Gender</span>-->
-<!--                                        --><?php
-//                                            echo $profile['gender'];
-//                                        ?>
-<!--                                    </li>-->
-<!--                                </ul>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="col-lg-6">-->
-<!--                            <figure class="hero-image">-->
-<!--                                <img src="img/hero.jpg" alt="5">-->
-<!--                            </figure>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
 
                 <div class="reviewtitle">
                     <h2>Here is your information</h2>
@@ -176,6 +133,24 @@
 	            }
 	            $mysqli->close();
 	        } else {
+                ?>
+
+           <div class="block-30 block-30-sm item"  data-stellar-background-ratio="0.5">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-10">
+                            <span class="subheading-sm">Profile Page</span>
+                            <h2 class="heading">
+                                Welcome to GoHousin
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+<?php
             $login['email'] = $_POST['email'];
             $pass = (string)$_POST['pass'];
             $up = $_POST['up'];
@@ -187,14 +162,11 @@
             $ifExist = "select password,id, email from login where email='" . $login['email'] . "'";
             $result = mysqli_query($mysqli, $ifExist);
             if (mysqli_num_rows($result) == 0) {
-                echo "No account yet";
+
                 echo "<br>";
-                print "<a class=\"navbar-brand\" href=\"http://gohousin.com/signup.php\">Sign Up for a New Account</a>";
                 echo('<br>');
-                print("OR Sign In To Your Account");
-                echo('<br>');
-                print("<div class = \"container-login\">
-        <form class = \"form-login\"  ACTION=\"http://www.gohousin.com/profile.php\" METHOD=\"POST\">
+                print("<div class = \"container-profile\">
+        <form class = \"form-profile\"  ACTION=\"http://www.gohousin.com/profile.php\" METHOD=\"POST\">
 
             <div class=\"dialog\">
                 <a href=\"index.html\" class=\"close-thick\"></a>
@@ -242,43 +214,26 @@
 
             if ($rehash === $hashed) {
 
-
                 $signin = true;
                 $_SESSION['username'] = $login['email'];
                 $_SESSION['loggedin'] = true;
 
-            } else {
-                echo("incorrect password, try again");
-            }
+            } 
 
             $mysqli->close();
             ?>
-            <div class="block-30 block-30-sm item"  data-stellar-background-ratio="0.5">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-10">
-                            <span class="subheading-sm">Profile Page</span>
-                            <h2 class="heading">
-                                Welcome to GoHousin
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <br>
-            <div class="reviewtitle">
-                <h2>Here is your information</h2>
-                <br>
-                <br>
-                <span>
+<div class="reviewtitle">
+                    <h2>Here is your information</h2>
+                    <br>
+                    <br>
+                    <span>
                     <h4 class = "heading">
                         Name:
                     </h4>
                 </span>
-                <?php
+                    <?php
                     print $profile['FirstName'] . " " . $profile['LastName']; ?>
-                <span>
+                    <span>
                     <h4 class = "heading">
                         School:
                     </h4>
@@ -287,7 +242,7 @@
                     print $profile['school'];
                     ?>
 
-                <span>
+                    <span>
                         <h4 class = "heading">
                             Year:
                         </h4>
@@ -296,7 +251,7 @@
                     print $profile['year'];
                     ?>
 
-                <span>
+                    <span>
                         <h4 class = "heading">
                             Gender:
                         </h4>
@@ -305,10 +260,10 @@
                     print $profile['gender'];
                     ?>
 
-                <br>
-                <br>
-                <br>
-            </div>
+                    <br>
+                    <br>
+                    <br>
+                </div>
 
             <?php
         }
