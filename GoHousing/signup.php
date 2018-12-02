@@ -1,20 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-    <meta charset="utf-8" http-equiv="x-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" type="text/css" href="nodeModule/bootstrap/css/bootstrap.min.css">
+    <title>Go Housin</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="login.css">
 
-    <link rel="stylesheet" type="text/css" href="login.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
-
-    <title>One Moment Your Account Will Be Set Up Soon</title>
 </head>
-<body background="http://gohousin.com/sign.jpeg">
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">GoHousin</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="app/information%20review/information%20review.html" class="nav-link">Information Reivew</a></li>
+                <li class="nav-item"><a href="app/information%20sharing/information%20sharing.html" class="nav-link">Information Sharing</a></li>
+                <li class="nav-item"><a href="app/roommate%20searching/roommate%20searching.html" class="nav-link">Roommate Searching</a></li>
+                <li class="nav-item"><a href="app/aboutus/about.html" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="app/contact/contact.php" class="nav-link">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="block-30 block-30-sm item"  data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-10">
+                <span class="subheading-sm">Sign Up Page</span>
+                <h2 class="heading">
+                    Welcome to GoHousin
+                </h2>
+                <h4 class="heading">
+                    Please fill in your information below
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
 <div class = "limiter">
     <?php
         $haserr=0;
@@ -176,8 +218,8 @@
 
         </form>
     </div>");   $mysqli->close();  }else {
-             print("<div class = \"container-login\">
-                 <form class = \"form-login\" action=\"http://www.gohousin.com/signup.php\" method=\"post\">
+             print("<div class = \"container-profile\">
+                 <form class = \"form-profile\" action=\"http://www.gohousin.com/signup.php\" method=\"post\">
                      <div class=\"dialog\">
                          <a href=\"index.html\" class=\"close-thick\"></a>
                      </div>
