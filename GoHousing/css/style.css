@@ -475,6 +475,51 @@ pre {
       max-width: 1240px; } }
 /*index page*/
 
+
+.reviewtitle {
+  position: relative;
+  left: 10%;
+}
+
+.gapbetween {
+  position: relative;
+  left: 10%;
+}
+
+.reviewinput {
+  position: relative;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 70%;
+}
+
+.inputtext {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 100px;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #df9393;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #df9393;
+}
+
 .container-fluid {
   width: 100%;
   padding-right: 15px;
@@ -8599,7 +8644,7 @@ textarea.form-control {
     min-height: 700px;
     height: 70vh; }
   .block-30.block-30-sm .heading {
-    font-size: 70px;
+    font-size: 50px;
     margin-bottom: 20px; }
   .block-30 .lead {
     color: #fff; }
@@ -8643,6 +8688,19 @@ textarea.form-control {
         color: #fc3c3c;
         border-bottom: 2px solid #fc3c3c; }
 
+.redirect{
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 .block-33 {
   background: #fff;
   padding: 20px;
@@ -8660,6 +8718,7 @@ textarea.form-control {
     line-height: 1.5;
     margin: 0;
     padding: 0;
+    color: #df9393;
     font-size: 18px;
     font-weight: 300; }
   .block-33 .vcard .name-text .meta {

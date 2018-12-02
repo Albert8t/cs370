@@ -4,7 +4,7 @@ body, html {
 }
 
 .limiter{
-    background-image: url("assets/image/loginbackground.png");
+
     /*background-color: transparent;*/
     height:100%;
     background-position: center;
@@ -25,9 +25,8 @@ body, html {
 .title-signin{
     width: 100%;
     display: block;
-    font-family: 'Montserrat', sans-serif;
     font-size: 40px;
-    color: #F0F8FF;
+    color: #999999;
     line-height: 1.2;
     text-align: center;
 }
