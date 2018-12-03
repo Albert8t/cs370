@@ -103,15 +103,34 @@ window.survey = new Survey.Model(json);
 survey
     .onComplete
     .add(function (result) {
-         // document
-         //     .querySelector('#surveyResult')
-         //     .innerHTML = "result: " + JSON.stringify(result.data);
+         document
+             .querySelector('#surveyResult')
+             .innerHTML = "result: " + JSON.stringify(result.data);
         setTimeout(function() {
             survey.clear(false, true);
-            window.location.href = "roommate searching.html";
+            window.location.href = "roommate searching.php";
         }, 1000);
 
     });
+
+
+survey.data = {
+    'sharedplace': '4',
+    'personality': '4',
+    'how to clean': 'Clean before I go to bed',
+    'present': 'A majority of the time',
+    'alcohol use': 'Never',
+    'smoke':'yes',
+    'roommate smoke':'yes',
+    'guests':'Never',
+    'roommate guests':'Anytime',
+    'day time':'At noon',
+    'night time':'Before 10pm',
+    'suggestions':''
+
+};
+survey.mode = 'display';
+
 
 /*//Use getValue to get the value of the question
 survey.getValue('questionName');
