@@ -113,6 +113,25 @@ survey
 
     });
 
+
+survey.data = {
+    'sharedplace': '4',
+    'personality': '4',
+    'how to clean': 'Clean before I go to bed',
+    'present': 'A majority of the time',
+    'alcohol use': 'Never',
+    'smoke':'yes',
+    'roommate smoke':'yes',
+    'guests':'Never',
+    'roommate guests':'Anytime',
+    'day time':'At noon',
+    'night time':'Before 10pm',
+    'suggestions':''
+
+};
+survey.mode = 'display';
+
+
 /*//Use getValue to get the value of the question
 survey.getValue('questionName');
 //Use setValue to set the value of the question
