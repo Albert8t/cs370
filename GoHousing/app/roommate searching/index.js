@@ -30,7 +30,7 @@ var json = {
                     maximumRateDescription: "Outgoing"
                 },  {
                     type: "radiogroup",
-                    name: "how to clean",
+                    name: "howtoclean",
                     title: "How do you tipically clean:",
                     isRequired: true,
                     choices: ["Clean right away", "Clean before I go to bed", "I wait a few days"]
@@ -42,13 +42,13 @@ var json = {
                     choices: ["A majority of the time", "I may be gone most weekends", "I will hardly be home"]
                 },  {
                     type: "radiogroup",
-                    name: "alcohol use",
+                    name: "alcoholuse",
                     title: "Describe your alcohol use:",
                     isRequired: true,
                     choices: ["Never", "A few times a month", "1-2 days per week","3-5 days per week", "6-7 days per week"]
                 },  {
                     type: "radiogroup",
-                    name: "alcohol use",
+                    name: "roommatealcoholuse",
                     title: "Do you mind if your roommates drink?",
                     isRequired: true,
                     choices: ["Prefer no alcohol", "1-3 times per week", "Anytime"]
@@ -60,7 +60,7 @@ var json = {
                     choices: ["Yes", "No"]
                 },  {
                     type: "radiogroup",
-                    name: "roommate smoke",
+                    name: "roommatesmoke",
                     title: "Do you mind if your roommates are smokers?",
                     isRequired: true,
                     choices: ["Yes", "No"]
@@ -72,19 +72,19 @@ var json = {
                     choices: ["Never", "A few times a month", "1-2 days per week","3-5 days per week", "6-7 days per week"]
                 },   {
                     type: "radiogroup",
-                    name: "roommate guests",
+                    name: "roommateguests",
                     title: "How often may you roommates have guests in the apartment?",
                     isRequired: true,
                     choices: ["Prefer no guests", "1-3 times per week", "Anytime"]
                 },  {
                     type: "radiogroup",
-                    name: "day time",
+                    name: "daytime",
                     title: "When do you start your day?",
                     isRequired: true,
                     choices: ["In the morning", "At noon", "After noon"]
                 }, {
                     type: "radiogroup",
-                    name: "night time",
+                    name: "nighttime",
                     title: "When do you typically go to bed?",
                     isRequired: true,
                     choices: ["Before 10pm","Before midnight","After midnight"]
@@ -105,31 +105,33 @@ survey
     .add(function (result) {
          document
              .querySelector('#surveyResult')
-             .innerHTML = "result: " + JSON.stringify(result.data);
-        setTimeout(function() {
-            survey.clear(false, true);
-            window.location.href = "roommate searching.php";
-        }, 1000);
+             .innerHTML = username + JSON.stringify(result.data);
+        // setTimeout(function() {
+        //     survey.clear(false, true);
+        //     window.location.href = "roommate searching.php";
+        // }, 1000);
 
     });
 
+survey.getValue('sharedplace');
 
-survey.data = {
-    'sharedplace': '4',
-    'personality': '4',
-    'how to clean': 'Clean before I go to bed',
-    'present': 'A majority of the time',
-    'alcohol use': 'Never',
-    'smoke':'yes',
-    'roommate smoke':'yes',
-    'guests':'Never',
-    'roommate guests':'Anytime',
-    'day time':'At noon',
-    'night time':'Before 10pm',
-    'suggestions':''
-
-};
-survey.mode = 'display';
+// survey.data = {
+//     'sharedplace': '4',
+//     'personality': '4',
+//     'howtoclean': 'Clean before I go to bed',
+//     'present': 'A majority of the time',
+//     'alcoholuse': 'Never',
+//     'roommate alcoholuse':'Anytime',
+//     'smoke':'yes',
+//     'roommate smoke':'yes',
+//     'guests':'Never',
+//     'roommate guests':'Anytime',
+//     'daytime':'At noon',
+//     'nighttime':'Before 10pm',
+//     'suggestions':''
+//
+// };
+// survey.mode = 'display';
 
 
 /*//Use getValue to get the value of the question
