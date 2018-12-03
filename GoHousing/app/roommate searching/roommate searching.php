@@ -6,9 +6,8 @@
     <title>Go Housin</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<<<<<<< HEAD
-     <link rel="stylesheet" href="roommate searching.css">
+
+
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -22,14 +21,8 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-=======
-    <link rel="stylesheet" href="roommate searching.css">
+    <link rel="stylesheet" href="roommate%20searching.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" id="bootstrap-css">
-
->>>>>>> f42e0d3cd037baacab350886d93856e0bb976c2f
 
 </head>
 
@@ -45,9 +38,9 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="information%20review.html" class="nav-link">Information Reivew</a></li>
-                <li class="nav-item"><a href="../information%20sharing/information%20sharing.html" class="nav-link">Information Sharing</a></li>
-                <li class="nav-item"><a href="../roommate%20searching/survey.html" class="nav-link">Roommate Searching</a></li>
+                <li class="nav-item"><a href="../information%20review/information%20review.html" class="nav-link">Information Reivew</a></li>
+                <li class="nav-item"><a href="../information%20sharing/index.php" class="nav-link">Information Sharing</a></li>
+                <li class="nav-item"><a href="../roommate%20searching/roommate%20searching.php" class="nav-link">Roommate Searching</a></li>
                 <li class="nav-item"><a href="../aboutus/about.html" class="nav-link">About Us</a></li>
                 <li class="nav-item"><a href="../contact/contact.php" class="nav-link">Contact Us</a></li>
             </ul>
@@ -70,14 +63,26 @@
 </div>
 <br>
 <br>
-<div class = "gapbetween2">
-    <h4>Click here to fill out the survey</h4>
-    <p class="card-text">Your survey result will be shown to those who match with you.</p>
-    <a href="survey.html" class="btn btn-info">Survey</a>
-</div>
-<<<<<<< HEAD
-<br>
-<br>
+
+<?php
+
+session_start();
+if(!$_SESSION['loggedin']) {
+    print( "<center><a class=\"navbar-brand\" href=\"http://gohousin.com/profile.php\">Sign In To Search For Roommate</a></center>");
+}else {
+?>
+    <div class = "gapbetween2">
+        <h4>Click here to fill out the survey</h4>
+        <p class="card-text">Your survey result will be shown to those who match with you.</p>
+        <a href="survey.html" class="btn btn-info">Survey</a>
+    </div>
+    <br>
+    <br>
+<?php
+}
+
+?>
+
 <div class="card-deck">
 
     <div class="card" style="width: 18rem;">
@@ -97,7 +102,7 @@
         <a href="#" class="btn btn-info">Go somewhere</a>
       </div>
     </div>
-=======
+
 
         <div class="container mt-40 mb-30">
             <h3 class="text-center">Hover Effect Style : Demo - 21</h3>
@@ -134,10 +139,7 @@
                 </div>
             </div>
         </div>
->>>>>>> f42e0d3cd037baacab350886d93856e0bb976c2f
 
-
-<<<<<<< HEAD
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="defaultpicture.png" alt="Card image cap">
       <div class="card-body">
@@ -148,12 +150,8 @@
     </div>
 
 </div>
-</body>
-=======
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 
->>>>>>> f42e0d3cd037baacab350886d93856e0bb976c2f
 </html>
 
