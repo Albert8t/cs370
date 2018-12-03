@@ -70,87 +70,76 @@ session_start();
 if(!$_SESSION['loggedin']) {
     print( "<center><a class=\"navbar-brand\" href=\"http://gohousin.com/profile.php\">Sign In To Search For Roommate</a></center>");
 }else {
-?>
-    <div class = "gapbetween2">
+    ?>
+    <div class="gapbetween2">
         <h4>Click here to fill out the survey</h4>
         <p class="card-text">Your survey result will be shown to those who match with you.</p>
         <a href="survey.html" class="btn btn-info">Survey</a>
     </div>
     <br>
     <br>
-<?php
-}
+    <br>
+    <br>
+    <br>
 
-?>
+    <div class="site-section bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="block-33">
+                        <div class="vcard d-flex mb-3">
+                            <div class="image align-self-center"><img src="defaultpicture.png" alt="Person here"></div>
+                            <div class="name-text align-self-center">
+                                <h2 class="heading">Martin Newmansfield</h2>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <blockquote>
+                                <p>&rdquo; Reviews Here &ldquo;</p>
+                            </blockquote>
+                        </div>
+                    </div>
 
-<div class="card-deck">
-
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="defaultpicture.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-info">Go somewhere</a>
-      </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="defaultpicture.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-info">Go somewhere</a>
-      </div>
-    </div>
-
-
-        <div class="container mt-40 mb-30">
-            <h3 class="text-center">Hover Effect Style : Demo - 21</h3>
-            <div class="row mt-30">
-                <div class="col-md-4 col-sm-6">
-                    <div class="box21">
-                        <img src="http://bestjquery.com/tutorial/hover-effect/demo95/images/img-1.jpg" alt="">
-                        <div class="box-content">
-                            <h4 class="title">willimson</h4>
-                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis augue in odio suscipit, at.</p>
-                            <a class="read-more" href="#">read more</a>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="block-33">
+                        <div class="vcard d-flex mb-3">
+                            <div class="image align-self-center"><img src="defaultpicture.png" alt="Person here"></div>
+                            <div class="name-text align-self-center">
+                                <h2 class="heading">Nancy Green</h2>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <blockquote>
+                                <p>&rdquo; Reviews Here &ldquo;</p>
+                            </blockquote>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="box21">
-                        <img src="http://bestjquery.com/tutorial/hover-effect/demo95/images/img-2.jpg" alt="">
-                        <div class="box-content">
-                            <h4 class="title">Kristiana</h4>
-                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis augue in odio suscipit, at.</p>
-                            <a class="read-more" href="#">read more</a>
+                <div class="col-md-6 col-lg-4">
+                    <div class="block-33">
+                        <div class="vcard d-flex mb-3">
+                            <div class="image align-self-center"><img src="defaultpicture.png" alt="Person here"></div>
+                            <div class="name-text align-self-center">
+                                <h2 class="heading">Elizabeth Charles</h2>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="box21">
-                        <img src="http://bestjquery.com/tutorial/hover-effect/demo95/images/img-3.jpg" alt="">
-                        <div class="box-content">
-                            <h4 class="title">Kristiana</h4>
-                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis augue in odio suscipit, at.</p>
-                            <a class="read-more" href="#">read more</a>
+                        <div class="text">
+                            <blockquote>
+                                <p>&rdquo; Reviews Here &ldquo;</p>
+                            </blockquote>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="defaultpicture.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-info">Go somewhere</a>
-      </div>
     </div>
-
-</div>
-
+    <?php
+}
+?>
+<br>
+<br>
+<br>
 </body>
 
 </html>
