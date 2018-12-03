@@ -66,7 +66,7 @@ print( "<center><a class=\"navbar-brand\" href=\"http://gohousin.com/profile.php
 else
 print("<div class = \"reviewtitle\">
     <div class = \"reviewinput\">
-        <form form class = \"form-login\"  ACTION=\"GablesReview.php\" METHOD=\"POST\">
+        <form form class = \"form-login\"  ACTION=\"EmoryPointReview.php\" METHOD=\"POST\">
             <h3>Please fill in your reviews</h3>
 
             <p>Your reviews help other learn about Gables Emory Point.</p>
