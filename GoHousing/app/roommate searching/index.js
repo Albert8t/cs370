@@ -108,7 +108,7 @@ survey
          //     .innerHTML = "result: " + JSON.stringify(result.data);
         setTimeout(function() {
             survey.clear(false, true);
-            window.location.href = "roommate searching.html";
+            window.location.href = "roommate searching.php";
         }, 1000);
 
     });
