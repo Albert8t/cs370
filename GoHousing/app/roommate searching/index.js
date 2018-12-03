@@ -103,9 +103,9 @@ window.survey = new Survey.Model(json);
 survey
     .onComplete
     .add(function (result) {
-         // document
-         //     .querySelector('#surveyResult')
-         //     .innerHTML = "result: " + JSON.stringify(result.data);
+         document
+             .querySelector('#surveyResult')
+             .innerHTML = "result: " + JSON.stringify(result.data);
         setTimeout(function() {
             survey.clear(false, true);
             window.location.href = "roommate searching.php";

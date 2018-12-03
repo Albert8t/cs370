@@ -83,28 +83,7 @@ if(!$_SESSION['loggedin']) {
 
 ?>
 
-<div class="card-deck">
-
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="defaultpicture.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-info">Go somewhere</a>
-      </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="defaultpicture.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-info">Go somewhere</a>
-      </div>
-    </div>
-
-
-        <div class="container mt-40 mb-30">
+ <div class="container mt-40 mb-30">
             <h3 class="text-center">Hover Effect Style : Demo - 21</h3>
             <div class="row mt-30">
                 <div class="col-md-4 col-sm-6">
@@ -140,14 +119,6 @@ if(!$_SESSION['loggedin']) {
             </div>
         </div>
 
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="defaultpicture.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-info">Go somewhere</a>
-      </div>
-    </div>
 
 </div>
 
