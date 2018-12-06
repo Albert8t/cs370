@@ -70,18 +70,49 @@ session_start();
 if(!$_SESSION['loggedin']) {
     print( "<center><a class=\"navbar-brand\" href=\"http://gohousin.com/profile.php\">Sign In To Search For Roommate</a></center>");
 }else {
-    ?>
-    <div class="gapbetween2">
-        <h4>Click here to fill out the survey</h4>
-        <p class="card-text">Your survey result will be shown to those who match with you.</p>
-        <a href="survey.html" class="btn btn-info">Survey</a>
-    </div>
-    <br>
-    <br>
-<<<<<<< HEAD
-    <br>
-    <br>
-    <br>
+    $email = $_SESSION['username'];
+    $mysqli = new mysqli("localhost", "root", "practicum370", "GoHousin");
+    if (mysqli_connect_errno()) {
+        printf("Connect failed: %s\n", mysqli_connect_error());
+        exit(1);
+    }
+    $namequ = "select * from login join survey on login.id=survey.id where email='$email';";
+    $nameres = $mysqli->query($namequ);
+    $nameRow = $nameres->fetch_assoc();
+    if ($nameRow != 0) {
+        $share = $nameRow['sharedplace'];
+        $person = $nameRow['personality'];
+        $clean = $nameRow['howtoclean'];
+        $pre = $nameRow['present'];
+        $alcohol = $nameRow['alcoholuse'];
+        $roomalcohol = $nameRow['roommatealcoholuse'];
+        $smoke = $nameRow['smoke'];
+        $roomsmoke = $nameRow['roommatesmoke'];
+        $guest = $nameRow['guests'];
+        $roomguest = $nameRow['roommateguests'];
+        $time = $nameRow['daytime'];
+        $night = $nameRow['nighttime'];
+
+    }else {
+        ?>
+        <div class="gapbetween2">
+            <h4>Click here to fill out the survey</h4>
+            <p class="card-text">Your survey result will be shown to those who match with you.</p>
+            <a href="survey.php" class="btn btn-info">Survey</a>
+        </div>
+        <br>
+        <br>
+        <<<<<<< HEAD
+        <br>
+        <br>
+        <br>
+
+<?php
+
+    }
+    $mysqli->close();
+}
+?>
 
     <div class="site-section bg-light">
         <div class="container">
@@ -99,10 +130,6 @@ if(!$_SESSION['loggedin']) {
                                 <p>&rdquo; Reviews Here &ldquo;</p>
                             </blockquote>
 =======
-<?php
-}
-
-?>
 
  <div class="container mt-40 mb-30">
             <h3 class="text-center">Hover Effect Style : Demo - 21</h3>
@@ -152,10 +179,7 @@ if(!$_SESSION['loggedin']) {
             </div>
         </div>
 <<<<<<< HEAD
-    </div>
-    <?php
-}
-?>
+
 <br>
 <br>
 <br>
