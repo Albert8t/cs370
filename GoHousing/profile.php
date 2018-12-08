@@ -222,25 +222,25 @@
                 <span>
                     <h4 class = "txt1">
                         Name: <?php
-                        print $profile['FirstName'] . " " . $profile['LastName']; ?>
+                        print $row['fname'] . " " . $row['lname']; ?>
                     </h4>
                 </span>
                 <span>
                     <h4 class = "heading">
                         School:<?php
-                        print $profile['school']; ?>
+                        print $row['school']; ?>
                     </h4>
                 </span>
                 <span>
                         <h4 class = "heading">
                             Year:<?php
-                            print $profile['year']; ?>
+                            print $row['year']; ?>
                         </h4>
                 </span>
                 <span>
                         <h4 class = "heading">
                             Gender:<?php
-                            print $profile['gender']; ?>
+                            print $row['gender']; ?>
                         </h4>
                 </span>
                     <br>
