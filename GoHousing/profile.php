@@ -30,8 +30,8 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="app/information%20review/information%20review.html" class="nav-link">Information Reivew</a></li>
-                <li class="nav-item"><a href="app/information%20sharing/information%20sharing.html" class="nav-link">Information Sharing</a></li>
-                <li class="nav-item"><a href="app/roommate%20searching/roommate%20searching.html" class="nav-link">Roommate Searching</a></li>
+                <li class="nav-item"><a href="app/information%20sharing/index.php" class="nav-link">Information Sharing</a></li>
+                <li class="nav-item"><a href="app/roommate%20searching/roommate%20searching.php" class="nav-link">Roommate Searching</a></li>
                 <li class="nav-item"><a href="app/aboutus/about.html" class="nav-link">About Us</a></li>
                 <li class="nav-item"><a href="app/contact/contact.php" class="nav-link">Contact Us</a></li>
             </ul>
@@ -89,39 +89,29 @@
                     <br>
                     <br>
                     <span>
-                    <h4 class = "heading">
-                        Name:
+                    <h4 class = "txt1">
+                        Name: <?php
+                        print $profile['FirstName'] . " " . $profile['LastName']; ?>
                     </h4>
                 </span>
-                    <?php
-                    print $profile['FirstName'] . " " . $profile['LastName']; ?>
                     <span>
                     <h4 class = "heading">
-                        School:
+                        School:<?php
+                        print $profile['school']; ?>
                     </h4>
                 </span>
-                    <?php
-                    print $profile['school'];
-                    ?>
-
                     <span>
                         <h4 class = "heading">
-                            Year:
+                            Year:<?php
+                            print $profile['year']; ?>
                         </h4>
                 </span>
-                    <?php
-                    print $profile['year'];
-                    ?>
-
                     <span>
                         <h4 class = "heading">
-                            Gender:
+                            Gender:<?php
+                            print $profile['gender']; ?>
                         </h4>
                 </span>
-                    <?php
-                    print $profile['gender'];
-                    ?>
-
                     <br>
                     <br>
                     <br>
@@ -206,6 +196,9 @@
     </div>");
 
             }
+
+
+
             $row = $result->fetch_assoc();
             $hashed = (string)$row['password'];
             $signin = false;
@@ -226,44 +219,34 @@
                     <h2>Here is your information</h2>
                     <br>
                     <br>
-                    <span>
-                    <h4 class = "heading">
-                        Name:
+                <span>
+                    <h4 class = "txt1">
+                        Name: <?php
+                        print $profile['FirstName'] . " " . $profile['LastName']; ?>
                     </h4>
                 </span>
-                    <?php
-                    print $profile['FirstName'] . " " . $profile['LastName']; ?>
-                    <span>
+                <span>
                     <h4 class = "heading">
-                        School:
+                        School:<?php
+                        print $profile['school']; ?>
                     </h4>
                 </span>
-                    <?php
-                    print $profile['school'];
-                    ?>
-
-                    <span>
+                <span>
                         <h4 class = "heading">
-                            Year:
+                            Year:<?php
+                            print $profile['year']; ?>
                         </h4>
                 </span>
-                    <?php
-                    print $profile['year'];
-                    ?>
-
-                    <span>
+                <span>
                         <h4 class = "heading">
-                            Gender:
+                            Gender:<?php
+                            print $profile['gender']; ?>
                         </h4>
                 </span>
-                    <?php
-                    print $profile['gender'];
-                    ?>
-
                     <br>
                     <br>
                     <br>
-                </div>
+</div>
 
             <?php
         }

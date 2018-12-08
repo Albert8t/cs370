@@ -223,7 +223,7 @@
                      <div class=\"dialog\">
                          <a href=\"index.html\" class=\"close-thick\"></a>
                      </div>
-                     <span class=\"txt2\">");
+                     <span class=\"txt2t\">");
 
 
                             if($invalidEmail==1) { ?>

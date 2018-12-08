@@ -39,12 +39,6 @@ body, html {
     line-height: 1.5;
 }
 
-.txt2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    color: darkred;
-    line-height: 1.5;
-}
 
 .input-title {
     width: 100%;
@@ -68,9 +62,17 @@ body, html {
 }
 
 .txt2 {
-    font-family: 'Cinzel', serif;;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     color: #999999;
+    line-height: 1.5;
+}
+
+.txt2t {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 14px;
+    color: red;
     line-height: 1.5;
 }
 

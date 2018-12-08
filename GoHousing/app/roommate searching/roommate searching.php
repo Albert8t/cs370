@@ -102,7 +102,6 @@ if(!$_SESSION['loggedin']) {
         </div>
         <br>
         <br>
-        <<<<<<< HEAD
         <br>
         <br>
         <br>
@@ -129,22 +128,8 @@ if(!$_SESSION['loggedin']) {
                             <blockquote>
                                 <p>&rdquo; Reviews Here &ldquo;</p>
                             </blockquote>
-=======
-
- <div class="container mt-40 mb-30">
-            <h3 class="text-center">Hover Effect Style : Demo - 21</h3>
-            <div class="row mt-30">
-                <div class="col-md-4 col-sm-6">
-                    <div class="box21">
-                        <img src="http://bestjquery.com/tutorial/hover-effect/demo95/images/img-1.jpg" alt="">
-                        <div class="box-content">
-                            <h4 class="title">willimson</h4>
-                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis augue in odio suscipit, at.</p>
-                            <a class="read-more" href="#">read more</a>
->>>>>>> e4c175e4460db9c74e027dc27c3ce81401b5e09c
                         </div>
                     </div>
-
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="block-33">
@@ -178,17 +163,14 @@ if(!$_SESSION['loggedin']) {
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
 
 <br>
 <br>
 <br>
-=======
 
 
 </div>
 
->>>>>>> e4c175e4460db9c74e027dc27c3ce81401b5e09c
 </body>
 
 </html>
