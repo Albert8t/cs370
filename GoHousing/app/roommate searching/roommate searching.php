@@ -92,7 +92,80 @@ if(!$_SESSION['loggedin']) {
         $roomguest = $nameRow['roommateguests'];
         $time = $nameRow['daytime'];
         $night = $nameRow['nighttime'];
+        $match="select * from profile join survey on profile.uid=survey.id join login on profile.uid=login.id where email!= '$email '" ;
+        $tomatch=$mysqli->query($match);
+        $count = 0;
+        foreach ($tomatch as $one)
+        { $diff=0;
+            if(abs($nameRow['sharedplace']-$one['sharedplace'])>2)
+                continue;
+            if(abs($nameRow['personality']-$one['personality'])>2)
+                continue;
+            if(abs($nameRow['howtoclean']-$one['howtoclean'])>2)
+                continue;
+            if(abs($nameRow['present']-$one['present'])>2)
+                continue;
+            if(abs($nameRow['alcoholuse']-$one['alcoholuse'])>2)
+                continue;
+            if(abs($nameRow['sroommatealcoholuse']-$one['roommatealcoholuse'])>2)
+                continue;
+            if(abs($nameRow['smoke']-$one['smoke'])>2)
+                continue;
+            if(abs($nameRow['roommatesmoke']-$one['roommatesmoke'])>2)
+                continue;
+            if(abs($nameRow['guests']-$one['guests'])>2)
+                continue;
+            if(abs($nameRow['roommateguests']-$one['roommateguests'])>2)
+                continue;
+            if(abs($nameRow['daytime']-$one['daytime'])>2)
+                continue;
+            if(abs($nameRow['nighttime']-$one['nighttime'])>2)
+                continue;
 
+            $matchresf[$count] = $one['fname'];
+            $matchresl[$count] = $one['lname'];
+            $matchress[$count] = $one['school'];
+            $matchrese[$count] = $one['email'];
+            $count++;
+
+        }
+        $i = 0;
+        while ($i < $count)
+        {print("<div class=\"site-section bg-light\">
+    <div class=\"container\">
+        <div class=\"row\">");
+
+            for($j=0;$j<3;$j++)
+            {
+                if ($i >= $count) {
+                  break;
+                }
+                    print("<div class=\"col-md-6 col-lg-4\">
+                <div class=\"block-33\">
+                    <div class=\"vcard d-flex mb-3\">
+                        <div class=\"image align-self-center\"><img src=\"defaultpicture.png\" alt=\"Person here\"></div>
+                        <div class=\"name-text align-self-center\">
+                            <h2 class=\"heading\">");
+                print($matchresf[$i]." ".$matchresl[$i]);
+                    print("</h2>
+                        </div>
+                    </div>
+                    <div class=\"text\">
+                        <blockquote>
+                            <p>");
+                print($matchress[$i]." is his/her school" . ", contact him/her through email ".$matchrese[$i]  );
+                    print("</p>
+                        </blockquote>
+                    </div>
+                </div>
+
+            </div>");
+                $i++;
+                print"<br>"."<br>";
+            }
+
+            print"<br>"."<br>";
+            }
     }else {
         ?>
         <div class="gapbetween2">
@@ -106,71 +179,22 @@ if(!$_SESSION['loggedin']) {
         <br>
         <br>
 
-<?php
+        <?php
 
     }
     $mysqli->close();
 }
 ?>
 
-    <div class="site-section bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-4">
-                    <div class="block-33">
-                        <div class="vcard d-flex mb-3">
-                            <div class="image align-self-center"><img src="defaultpicture.png" alt="Person here"></div>
-                            <div class="name-text align-self-center">
-                                <h2 class="heading">Martin Newmansfield</h2>
-                            </div>
-                        </div>
-                        <div class="text">
-                            <blockquote>
-                                <p>&rdquo; Reviews Here &ldquo;</p>
-                            </blockquote>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="block-33">
-                        <div class="vcard d-flex mb-3">
-                            <div class="image align-self-center"><img src="defaultpicture.png" alt="Person here"></div>
-                            <div class="name-text align-self-center">
-                                <h2 class="heading">Nancy Green</h2>
-                            </div>
-                        </div>
-                        <div class="text">
-                            <blockquote>
-                                <p>&rdquo; Reviews Here &ldquo;</p>
-                            </blockquote>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="block-33">
-                        <div class="vcard d-flex mb-3">
-                            <div class="image align-self-center"><img src="defaultpicture.png" alt="Person here"></div>
-                            <div class="name-text align-self-center">
-                                <h2 class="heading">Elizabeth Charles</h2>
-                            </div>
-                        </div>
-                        <div class="text">
-                            <blockquote>
-                                <p>&rdquo; Reviews Here &ldquo;</p>
-                            </blockquote>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
 
 <br>
 <br>
 <br>
+
 
 
 </div>
-
 </body>
 
 </html>

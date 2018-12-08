@@ -89,27 +89,27 @@
                     <br>
                     <br>
                     <span>
-                    <h4 class = "txt1">
+                    <h4 class = "heading">
                         Name: <?php
-                        print $profile['FirstName'] . " " . $profile['LastName']; ?>
+                        print "  " . $profile['FirstName'] . " " . $profile['LastName']; ?>
                     </h4>
                 </span>
                     <span>
                     <h4 class = "heading">
                         School:<?php
-                        print $profile['school']; ?>
+                        print "  ". $profile['school']; ?>
                     </h4>
                 </span>
                     <span>
                         <h4 class = "heading">
                             Year:<?php
-                            print $profile['year']; ?>
+                            print "  ". $profile['year']; ?>
                         </h4>
                 </span>
                     <span>
                         <h4 class = "heading">
                             Gender:<?php
-                            print $profile['gender']; ?>
+                            print "  ". $profile['gender']; ?>
                         </h4>
                 </span>
                     <br>
@@ -149,7 +149,7 @@
                 printf("Connect failed: %s\n", mysqli_connect_error());
                 exit(1);
             }
-            $ifExist = "select password,id, email from login where email='" . $login['email'] . "'";
+            $ifExist = "select * from login join profile on profile.uid=login.id where email='" . $login['email'] . "'";
             $result = mysqli_query($mysqli, $ifExist);
             if (mysqli_num_rows($result) == 0) {
 
@@ -220,27 +220,27 @@
                     <br>
                     <br>
                 <span>
-                    <h4 class = "txt1">
+                    <h4 class = "heading">
                         Name: <?php
-                        print $row['fname'] . " " . $row['lname']; ?>
+                        print "  " . $row['fname'] . " " . $row['lname']; ?>
                     </h4>
                 </span>
                 <span>
                     <h4 class = "heading">
                         School:<?php
-                        print $row['school']; ?>
+                        print "  " . $row['school']; ?>
                     </h4>
                 </span>
                 <span>
                         <h4 class = "heading">
                             Year:<?php
-                            print $row['year']; ?>
+                            print "  " . $row['year']; ?>
                         </h4>
                 </span>
                 <span>
                         <h4 class = "heading">
                             Gender:<?php
-                            print $row['gender']; ?>
+                            print "  " . $row['gender']; ?>
                         </h4>
                 </span>
                     <br>
