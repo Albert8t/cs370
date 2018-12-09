@@ -31,10 +31,10 @@
 
     .logotext h2 {
         text-align: left;
-        font-size: 40px;
+        font-size: 35px;
         letter-spacing: 1px;
-        color: rgb(232, 232, 232);
-        font-family: Chalkduster, fantasy;
+        color: firebrick;
+        text-transform: uppercase;
     }
 
     .headInfo_login {
@@ -43,8 +43,6 @@
         z-index: 21;
         top: 20%;
         right: 10%;
-        font-family: fantasy;
-        font-weight: 600;
         font-size: large;
         color: rgb(232, 232, 232);
     }
@@ -275,8 +273,6 @@
         position: absolute;
         bottom: 15px;
         right: 15px;
-        font-family: fantasy;
-        font-weight: 600;
         font-size: large;
         color: rgb(232, 232, 232);
     }
@@ -325,7 +321,6 @@
         top: -5%;
         right: 0.5%;
         font-family: fantasy;
-        font-weight: 600;
         font-size: large;
         color: rgb(232, 232, 232);
     }
@@ -556,7 +551,6 @@
         bottom: 15px;
         right: 15px;
         font-family: fantasy;
-        font-weight: 600;
         font-size: large;
         color: rgb(232, 232, 232);
     }
@@ -615,7 +609,6 @@
         top: -5%;
         right: 0.5%;
         font-family: fantasy;
-        font-weight: 600;
         font-size: large;
         color: rgb(232, 232, 232);
     }
@@ -685,7 +678,6 @@
 
     .text h1 {
         font-family: Papyrus, fantasy;
-        font-weight: 900;
         width: 290px;
         height: 100px;
         font-size: 20px;
@@ -851,7 +843,6 @@
         bottom: 15px;
         right: 15px;
         font-family: fantasy;
-        font-weight: 600;
         font-size: large;
         color: rgb(232, 232, 232);
     }
@@ -913,7 +904,6 @@
         top: -5%;
         right: 0.5%;
         font-family: fantasy;
-        font-weight: 600;
         font-size: large;
         color: rgb(232, 232, 232);
     }
@@ -1149,7 +1139,7 @@
         bottom: 15px;
         right: 15px;
         font-family: fantasy;
-        font-weight: 600;
+
         font-size: large;
         color: rgb(232, 232, 232);
     }
